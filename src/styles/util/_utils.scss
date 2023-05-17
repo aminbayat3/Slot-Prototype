@@ -1,0 +1,84 @@
+.position-absolute {
+  position: absolute;
+}
+.position-relative {
+  position: relative;
+}
+.position-fixed {
+  position: fixed;
+}
+
+.w-100 {
+  width: 100%;
+}
+.w-50 {
+  width: 50%;
+}
+.h-100 {
+  height: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.flex-column {
+  flex-direction: column;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-end {
+  justify-content: flex-end;
+}
+.align-items-center {
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animate($name,$duration,$method,$fillMode){
+  animation: $name $duration $method;
+  -webkit-animation: $name $duration $method $fillMode;
+}
+
+// @mixin spinner($width, $height) {
+//   width: $width;
+//   height: $height;
+//   display: inline-block;
+//   border: 3px solid rgb(0, 0, 0);
+//   border-radius: 50%;
+//   border-top-color: rgb(255, 255, 255);
+//   @include animate(spin, 1s, ease-in-out, infinite);
+// }

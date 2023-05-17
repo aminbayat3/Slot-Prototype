@@ -1,0 +1,168 @@
+@forward "./styles/globals";
+@forward "./styles/util";
+
+@use "./styles/util" as u;
+
+%hand {
+  z-index: 8;
+  width: u.rem(152);
+  height: u.rem(66.28);
+}
+
+%button {
+  z-index: 8;
+  img {
+    left: 33%;
+    bottom: -8%;
+    width: u.rem(210);
+    height: u.rem(70.74);
+  }
+}
+
+.sidebar {
+  left: u.rem(-381);
+  top: 0;
+  z-index: 10;
+  width: u.rem(380.27);
+  height: u.rem(713);
+  background-image: url('../public/images/side-bar.png');
+  background-size: cover;
+  background-position: center center;
+
+  &.active {
+    @include u.animate(slideIn, 0.7s, ease-in-out, forwards);
+  }
+
+  &.inactive {
+    @include u.animate(slideOut, 0.7s, ease-in-out, forwards);
+  }
+
+  .cross {
+    top: u.rem(25);
+    left: u.rem(25);
+    width: u.rem(30);
+    height: u.rem(30);
+    cursor: pointer;
+  }
+}
+
+.nav {
+  .menu-button {
+    width: u.rem(48);
+    height: u.rem(45.82);
+    cursor: pointer;
+  }
+
+  .coin-counter {
+    width: u.rem(130);
+    height: u.rem(45.61);
+  }
+
+  .gold-balance {
+    left: 50%;
+    top: 20%;
+  }
+}
+
+.slot-machine-container {
+  width: u.rem(650);
+  height: u.rem(527.5);
+
+  .slot-machine-img {
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+  }
+
+  .spin-container {
+    position: relative;
+    .spin {
+      height: 333px;
+      width: 168px;
+      img {
+        width: u.rem(167);
+        height: u.rem(327);
+      }
+      .spin-icon-set {
+        position: absolute;
+        align-items: center;
+
+        .spin-icon {
+          height: 111px;
+          width: 168px;
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .right-hand {
+    @extend %hand;
+    right: 13%;
+    top: 22%;
+  }
+
+  .left-hand {
+    @extend %hand;
+    left: 13%;
+    top: 22%;
+  }
+
+  .arrow {
+    z-index: 8;
+    right: 5%;
+    width: u.rem(73);
+    height: u.rem(78);
+    top: 53%;
+  }
+
+  .start-button {
+   @extend %button;
+   cursor: pointer;
+  }
+
+  .pressed-button {
+    @extend %button;
+    display: none;
+  }
+
+  .scene-coin {
+    z-index: 8;
+    left: -21%;
+    bottom: -3%;
+    width: u.rem(67.69);
+    height: u.rem(40);
+  }
+  
+  .scene-coins {
+    z-index: 8;
+    right: -23%;
+    bottom: -5%;
+    width: u.rem(75);
+    height: u.rem(59.42);
+  }
+}
+
+
+@include u.keyframes(slideIn) {
+  from {
+    opacity: 0.5,
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@include u.keyframes(slideOut) {
+  from {
+    left: 0;
+  }
+  
+  to {
+    left: -381;
+  }
+}

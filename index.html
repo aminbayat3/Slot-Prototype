@@ -2,70 +2,29 @@
 <html lang="en">
   <head>
     <title>Slot Machine Prototype</title>
-    <link rel="stylesheet" href="prototype.css" />
-    <script type="module" src="dist/bundle.js" defer></script>
+    <link rel="stylesheet" href="/dist/styles.css" />
+    <script type="module" src="./dist/app.js" defer></script>
+    <script type="module" src="./dist/styles.js" defer></script>
   </head>
   <body>
-    <template id="spin-1">
-      <div class="spin">
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
+    <div class="sidebar position-absolute">
+      <img class="cross position-absolute" src="./public/images/cross.png" alt="cross" />
+    </div> 
+    <div class="nav w-100 d-flex space-between">
+      <img class="menu-button" src="./public/images/menu-button.png" alt="menu button" />
+      <div class="position-relative">
+        <img class="coin-counter" src="./public/images/coin-counter.png" alt="coin counter" />
+        <span class="gold-balance position-absolute">0</span>
       </div>
-    </template>
-    <template id="spin-2">
-      <div class="spin">
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
-      </div>
-    </template>
-    <template id="spin-3">
-      <div class="spin">
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
-      </div>
-    </template>
-    <div class="prototype-container">
-      <div class="spin-container">
-        <div class="spin">
+      
+    </div>
+    <div class="slot-machine-container mx-auto d-flex flex-column justify-content-end position-relative mt-8">
+      <img class="right-hand position-absolute" src="./public/images/right-hand.png" alt="right hand" />
+      <img class="left-hand position-absolute" src="./public/images/left-hand.png" alt="left hand" />
+      <img class="arrow position-absolute" src="./public/images/arrow.png" alt="arrow" />
+      <img class="slot-machine-img position-absolute" src="./public/images/slot-machine.png" alt="slot-machine" />
+      <div class="spin-container d-flex center overflow-hidden mb-6">
+        <div class="spin position-relative center">
           <div class="spin-icon-set">
             <div class="spin-icon"></div>
             <div class="spin-icon"></div>
@@ -82,7 +41,7 @@
             <div class="spin-icon"></div>
           </div>
         </div>
-        <div class="spin">
+        <div class="spin position-relative center">
           <div class="spin-icon-set">
             <div class="spin-icon"></div>
             <div class="spin-icon"></div>
@@ -99,7 +58,7 @@
             <div class="spin-icon"></div>
           </div>
         </div>
-        <div class="spin">
+        <div class="spin position-relative center">
           <div class="spin-icon-set">
             <div class="spin-icon"></div>
             <div class="spin-icon"></div>
@@ -117,9 +76,10 @@
           </div>
         </div>
       </div>
-      <div class="button-container">
-        <button type="button" class="start-button">PRESS TO SPIN</button>
-      </div>
+      <div class="start-button"><img class="w-100 h-100 position-absolute" src="./public/images/button.png" alt="button"/></div>
+      <div class="pressed-button"><img class="w-100 h-100 position-absolute" src="./public/images/button_pressed.png" alt="button"/></div>
+      <img class="scene-coin position-absolute" src="./public/images/scene-coin.png" alt="scene coin" />
+    <img class="scene-coins position-absolute" src="./public/images/scene-coins.png" alt="scene coins" />
     </div>
   </body>
 </html>

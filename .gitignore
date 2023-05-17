@@ -1,1 +1,4 @@
+# Ignore the dist folder
+/dist
+
 node_modules

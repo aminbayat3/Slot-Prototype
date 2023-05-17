@@ -1,0 +1,27 @@
+@use "../util" as u;
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: u.$font;
+  margin: 0;
+  padding: u.rem(15);
+  text-align: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  flex-direction: column;
+  background-image: url("../public/images/background.png");
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+}

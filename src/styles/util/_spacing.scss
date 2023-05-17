@@ -1,0 +1,145 @@
+@use "sass:math";
+@use "breakpoints" as b;
+@use "functions" as f;
+
+$space-gaps: (
+  "0": 0,
+  "1": f.rem(6),
+  "2": f.rem(7.5),
+  "3": f.rem(10),
+  "4": f.rem(15),
+  "5": f.rem(25),
+  "6": f.rem(35),
+  "7": f.rem(45),
+  "8": f.rem(65),
+  "9": auto,
+);
+
+// margins and paddings
+.ms-auto {
+  margin-left: auto !important;
+}
+.mt-auto {
+  margin-top: auto !important;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@each $key, $val in $space-gaps {
+  .ms-#{$key} {
+    margin-left: $val !important;
+  }
+  .mt-#{$key} {
+    margin-top: $val !important;
+  }
+  .me-#{$key} {
+    margin-right: $val !important;
+  }
+  .mb-#{$key} {
+    margin-bottom: $val !important;
+  }
+  .mx-#{$key} {
+    margin-left: $val !important;
+    margin-right: $val !important;
+  }
+  .my-#{$key} {
+    margin-top: $val !important;
+    margin-bottom: $val !important;
+  }
+  .ps-#{$key} {
+    padding-left: $val !important;
+  }
+  .pt-#{$key} {
+    padding-top: $val !important;
+  }
+  .pe-#{$key} {
+    padding-right: $val !important;
+  }
+  .pb-#{$key} {
+    padding-bottom: $val !important;
+  }
+  .py-#{$key} {
+    padding-top: $val !important;
+    padding-bottom: $val !important;
+  }
+  .px-#{$key} {
+    padding-left: $val !important;
+    padding-right: $val !important;
+  }
+  .p-#{$key} {
+    padding: $val !important;
+  }
+  .m-#{$key} {
+    margin: $val !important;
+  }
+}
+
+@each $breakpoint, $bValue in b.$breakpoints_up {
+  @include b.breakpoint-up($breakpoint) {
+    @each $key, $val in $space-gaps {
+      .ms-#{$breakpoint}-#{$key} {
+        margin-left: $val !important;
+      }
+      .mt-#{$breakpoint}-#{$key} {
+        margin-top: $val !important;
+      }
+      .me-#{$breakpoint}-#{$key} {
+        margin-right: $val !important;
+      }
+      .mb-#{$breakpoint}-#{$key} {
+        margin-bottom: $val !important;
+      }
+      .mx-#{$breakpoint}-#{$key} {
+        margin-left: $val !important;
+        margin-right: $val !important;
+      }
+      .my-#{$breakpoint}-#{$key} {
+        margin-top: $val !important;
+        margin-bottom: $val !important;
+      }
+
+      .ps-#{$breakpoint}-#{$key} {
+        padding-left: $val !important;
+      }
+
+      .pt-#{$breakpoint}-#{$key} {
+        padding-top: $val !important;
+      }
+
+      .pe-#{$breakpoint}-#{$key} {
+        padding-right: $val !important;
+      }
+
+      .pb-#{$breakpoint}-#{$key} {
+        padding-bottom: $val !important;
+      }
+
+      .px-#{$breakpoint}-#{$key} {
+        padding-left: $val !important;
+        padding-right: $val !important;
+      }
+
+      .py-#{$breakpoint}-#{$key} {
+        padding-top: $val !important;
+        padding-bottom: $val !important;
+      }
+    }
+  }
+}
+
+
+// $space-gaps: (
+//   "0": 0,
+//   "1": f.em(5),
+//   "2": f.em(10),
+//   "3": f.em(15),
+//   "4": f.em(20),
+//   "5": f.em(25),
+//   "6": f.em(30),
+//   "7": f.em(35),
+//   "8": f.em(40),
+//   "9": f.em(45),
+//   "10": f.em(50),
+// );

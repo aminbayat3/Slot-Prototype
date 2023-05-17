@@ -1,0 +1,31 @@
+@use "../util" as u;
+
+h1,
+h2,
+h3 {
+  font-family: u.$font;
+  font-weight: 800;
+  color: u.$whiteColor;
+}
+
+h1 {
+  font-size: clamp(u.rem(24), u.rem(23) + 2vw, u.rem(56));
+  line-height: u.rem(60);
+  letter-spacing: -0.04em;
+}
+
+p {
+  margin: 0;
+  color: u.$whiteColor;
+}
+
+span {
+  color: u.$whiteColor;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: u.$whiteColor;
+}

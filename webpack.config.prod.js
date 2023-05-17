@@ -1,9 +1,18 @@
 const path = require("path");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: "production",
-  entry: "./src/app.ts",
+  entry: {
+    app: {
+      import: './src/app.ts', 
+      dependOn: 'styles',
+    },
+    styles: {
+      import: './src/main.scss',
+    }
+  },
   devServer: {
     static: [
       {
@@ -12,7 +21,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: "bundle.js",
+    filename: '[name].js',
     path: path.resolve(__dirname, "dist"),
   },
   module: {
@@ -22,12 +31,35 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "images",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader', // Translates CSS into CommonJS
+          'sass-loader', // Compiles Sass to CSS
+        ],
+      },
     ],
   },
   resolve: {
     extensions: [".ts", ".js"],
   },
   plugins: [
-    new CleanPlugin.CleanWebpackPlugin()
+    new CleanPlugin.CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
   ]
 };
