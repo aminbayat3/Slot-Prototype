@@ -2,19 +2,18 @@
 <html lang="en">
   <head>
     <title>Slot Machine</title>
-    <link rel="stylesheet" href="/dist/styles.css" />
+    <link rel="stylesheet" href="/dist/app.css" />
     <script type="module" src="./dist/app.js" defer></script>
-    <script type="module" src="./dist/styles.js" defer></script>
   </head>
-  <body>
+  <body class="home-page">
     <!-- NavBar And Sidebar -->
     <template id="side">
       <div class="sidebar position-absolute d-flex flex-column py-6 px-5">
         <img class="exit mb-7" src="./public/images/exit.png" alt="cross" />
         <ul class="options px-4">
           <li class="mb-5"><a href="index.html" class="home" id="homeLink">Home</a></li>
-          <li class="mb-5"><a href="shop.html" id="homeLink">Shop</a></li>
-          <li class="mb-5"><a href="index.html" id="homeLink">Inventory</a></li>
+          <li class="mb-5"><a href="shop.html" id="shopLink">Shop</a></li>
+          <li class="mb-5"><a href="inventory.html" id="inventoryLink">Inventory</a></li>
         </ul>
       </div> 
     </template>
@@ -56,6 +55,7 @@
         <img class="left-hand position-absolute" src="./public/images/left-hand.png" alt="left hand" />
         <img class="arrow position-absolute" src="./public/images/arrow.png" alt="arrow" />
         <img class="slot-machine-img position-absolute" src="./public/images/slot-machine.png" alt="slot-machine" />
+        <img class="slot-shadow position-absolute" src="./public/images/slot-shadow.png" alt="slot shadow" /> 
         <img class="scene-coin position-absolute" src="./public/images/scene-coin.png" alt="scene coin" />
         <img class="scene-coins position-absolute" src="./public/images/scene-coins.png" alt="scene coins" />
        

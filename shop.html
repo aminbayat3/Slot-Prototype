@@ -4,64 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/dist/styles.css" />
+    <script type="module" src="./dist/shop.js" defer></script>
+    <link rel="stylesheet" href="/dist/app.css" />
     <title>Slot Machine</title>
 </head>
-<body>
+<body class="shop-page">
      <!-- NavBar And Sidebar -->
-     <template id="side">
-        <div class="sidebar position-absolute">
-          <img class="exit position-absolute" src="./public/images/exit.png" alt="cross" />
-        </div> 
-      </template>
-      
-      <template id="navbar">
-        <div class="nav w-100 d-flex space-between">
-          <img class="menu-button" src="./public/images/menu-button.png" alt="menu button" />
-          <div class="position-relative">
-            <img class="coin-counter" src="./public/images/coin-counter.png" alt="coin counter" />
-            <span class="gold-balance position-absolute">0</span>
-          </div>
+    <template id="side">
+      <div class="sidebar position-absolute d-flex flex-column py-6 px-5">
+        <img class="exit mb-7" src="./public/images/exit.png" alt="cross" />
+        <ul class="options px-4">
+          <li class="mb-5"><a href="index.html" id="homeLink">Home</a></li>
+          <li class="mb-5"><a href="shop.html" class="shop" id="shopLink">Shop</a></li>
+          <li class="mb-5"><a href="inventory.html" id="inventoryLink">Inventory</a></li>
+        </ul>
+      </div> 
+    </template>
+    
+    <template id="navbar">
+      <div class="nav w-100 d-flex space-between">
+        <img class="menu-button" src="./public/images/menu-button.png" alt="menu button" />
+        <div class="position-relative">
+          <img class="coin-counter" src="./public/images/coin-counter.png" alt="coin counter" />
+          <span class="gold-balance position-absolute">0</span>
         </div>
-      </template>
-      
-      <!-- A single Column -->
-      <template  id="single-column">
-        <div class="spin position-relative center">
-          <div class="spin-icon-set">
-            <div class="spin-icon"></div>
-            <div class="spin-icon"></div>
-            <div class="spin-icon"></div>
-          </div>
-          <div class="spin-icon-set">
-            <div class="spin-icon"></div>
-            <div class="spin-icon"></div>
-            <div class="spin-icon"></div>
-          </div>
-          <div class="spin-icon-set">
-            <div class="spin-icon"></div>
-            <div class="spin-icon"></div>
-            <div class="spin-icon"></div>
-          </div>
-        </div>
-      </template>
-      
-      <template id="slot-machine">
-        <div class="slot-machine-container mx-auto d-flex flex-column justify-content-end position-relative">
-          <img class="right-hand position-absolute" src="./public/images/right-hand.png" alt="right hand" />
-          <img class="left-hand position-absolute" src="./public/images/left-hand.png" alt="left hand" />
-          <img class="arrow position-absolute" src="./public/images/arrow.png" alt="arrow" />
-          <img class="slot-machine-img position-absolute" src="./public/images/slot-machine.png" alt="slot-machine" />
-          <img class="scene-coin position-absolute" src="./public/images/scene-coin.png" alt="scene coin" />
-          <img class="scene-coins position-absolute" src="./public/images/scene-coins.png" alt="scene coins" />
-         
-          <div class="d-flex center overflow-hidden mb-5 mb-xl-7"></div>
-  
-          <div class="start-button"><img class="w-100 h-100 position-absolute" src="./public/images/button.png" alt="button"/></div>
-          <div class="pressed-button"><img class="w-100 h-100 position-absolute" src="./public/images/button_pressed.png" alt="button"/></div>
-        </div>
-      </template>
+      </div>
+    </template>
 
-      <div id="shop"></div>
+      <div id="shop">
+        <div 
+      </div>
 </body>
 </html>

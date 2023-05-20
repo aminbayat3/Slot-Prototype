@@ -1,5 +1,20 @@
 @use "../util" as u;
 
+%page {
+  font-family: u.$font;
+  margin: 0;
+  padding: u.rem(15) u.rem(15) 0 u.rem(15);
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+
+  @include u.breakpoint-up('xl') {
+    padding: u.rem(25) u.rem(25) 0 u.rem(25);
+  }
+}
+
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -12,19 +27,13 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: u.$font;
-  margin: 0;
-  padding: u.rem(15) u.rem(15) 0 u.rem(15);
+.home-page {
+  @extend %page;
   text-align: center;
-  min-height: 100vh;
-  box-sizing: border-box;
-  background-image: url("../public/images/background.png");
-  background-size: cover;
-  background-position: center center;
-  overflow: hidden;
+  background-image: url("../public/images/home-background.png");
+}
 
-  @include u.breakpoint-up('xl') {
-    padding: u.rem(25) u.rem(25) 0 u.rem(25);
-  }
+.shop-page {
+  @extend %page;
+  background-image: url("../public/images/shop-background.png");
 }

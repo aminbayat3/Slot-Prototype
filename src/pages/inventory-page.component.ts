@@ -2,23 +2,23 @@ import Nav from "../components/nav.component";
 import Sidebar from "../components/sidebar.component";
 import { handleMenuButtonClick, handleCrossButtonClick } from "../slot.utils";
 
-class Shop {
-    private static instance: Shop;
+class Inventory {
+    private static instance: Inventory;
     private nav: Nav;
     private sidebar: Sidebar;
 
     constructor() {
-        this.nav = new Nav('shop');
-        this.sidebar = new Sidebar('shop');
+        this.nav = new Nav('inventory');
+        this.sidebar = new Sidebar('inventory');
 
         this.configure();
     }  
     
     static getInstance = () => {
-        if (Shop.instance) {
+        if (Inventory.instance) {
           return this.instance;
         }
-        this.instance = new Shop();
+        this.instance = new Inventory();
         return this.instance;
       };
     
@@ -28,4 +28,4 @@ class Shop {
     }
 }
 
-Shop.getInstance();
+Inventory.getInstance();

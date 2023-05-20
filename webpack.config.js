@@ -4,11 +4,9 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: {
-    app: {
-      import: "./src/app.ts",
-      dependOn: "styles",
-    },
-    styles: "./src/main.scss",
+    app: "./src/pages/home-page.component.ts",
+    shop: './src/pages/shop-page.component.ts',
+    inventory: './src/pages/inventory-page.component.ts',
   },
   devServer: {
     static: [

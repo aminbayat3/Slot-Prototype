@@ -11,13 +11,13 @@ import "../main.scss";
 
 class Home {
   private static instance: Home;
-  nav: Nav;
-  sidebar: Sidebar;
-  slot: Slot;
+  private nav: Nav;
+  private sidebar: Sidebar;
+  private slot: Slot;
 
   constructor() {
-    this.nav = Nav.getInstance();
-    this.sidebar = Sidebar.getInstance();
+    this.nav = new Nav('home');
+    this.sidebar = new Sidebar('home');
     this.slot = Slot.getInstance();
 
     this.configure();
@@ -40,4 +40,4 @@ class Home {
   };
 }
 
-export default Home;
+Home.getInstance();

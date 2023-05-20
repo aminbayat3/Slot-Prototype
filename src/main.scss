@@ -78,7 +78,9 @@
     a {
       font-size: u.rem(28);
 
-      &.home {
+      &.home,
+      &.shop,
+      &.inventory {
         color: darken(u.$primaryColor, 15%);
       }
     }
@@ -165,6 +167,16 @@
         height: u.rem(515.37);
         width: u.rem(260);
       }
+    }
+  }
+
+  .slot-shadow {
+    left: -15%;
+    bottom: -5%;
+
+    @include u.breakpoint-up("xl") {
+      left: -15%;
+      bottom: -2%;
     }
   }
 
