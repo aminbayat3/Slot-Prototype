@@ -1,16 +1,42 @@
-import Slot from "./components/slot.component";
-import { handleMenuButtonClick, handleCrossButtonClick } from "./slot.utils";
+import Home from "./pages/home-page.component";
 
-import "./main.scss";
+const home = Home.getInstance();
 
-const startButton = document.querySelector(".start-button")! as HTMLDivElement;
-const menuButton = document.querySelector(".menu-button")! as HTMLImageElement;
-const crossButton = document.querySelector('.cross')! as HTMLImageElement;
-const slot = Slot.getInstance();
-
-// Initalize stuff
-slot.resetSpinIconSets();
-
-startButton.addEventListener("click", slot.startSpin);
-menuButton.addEventListener("click", handleMenuButtonClick);
-crossButton.addEventListener("click", handleCrossButtonClick);
+// function loadContent() {
+//     const path = window.location.pathname;
+//     const contentElement = document.getElementById('content');
+//     contentElement.innerHTML = '';
+  
+//     if (path === '/') {
+//       fetch('home.html')
+//         .then(response => response.text())
+//         .then(html => {
+//           contentElement.innerHTML = html;
+//         })
+//         .catch(error => {
+//           console.error('Error loading home.html:', error);
+//         });
+//     } else if (path === '/about') {
+//       fetch('about.html')
+//         .then(response => response.text())
+//         .then(html => {
+//           contentElement.innerHTML = html;
+//         })
+//         .catch(error => {
+//           console.error('Error loading about.html:', error);
+//         });
+//     } else if (path === '/contact') {
+//       fetch('contact.html')
+//         .then(response => response.text())
+//         .then(html => {
+//           contentElement.innerHTML = html;
+//         })
+//         .catch(error => {
+//           console.error('Error loading contact.html:', error);
+//         });
+//     } else {
+//       const notFoundContent = document.createElement('h1');
+//       notFoundContent.textContent = '404 - Page Not Found';
+//       contentElement.appendChild(notFoundContent);
+//     }
+//   }
