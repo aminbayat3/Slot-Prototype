@@ -7,7 +7,6 @@ module.exports = {
     home: "./src/pages/home-page.component.ts",
     shop: './src/pages/shop-page.component.ts',
     inventory: './src/pages/inventory-page.component.ts',
-    app: "./src/app.ts",
   },
   devServer: {
     static: [

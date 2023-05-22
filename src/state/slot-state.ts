@@ -141,17 +141,6 @@ class SlotState extends State {
       listenerFn(this.goldBalance);
     }
   }
-
-  private saveToLocalStorage = () => {
-    const data = {
-      winningIndex: this.winningIndex,
-      
-    }
-  }
-
-  private updateLocalStorage = () => {
-    
-  }
 }
 
 export const slotState = SlotState.getInstance();

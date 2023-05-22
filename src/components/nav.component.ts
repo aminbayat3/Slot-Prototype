@@ -9,7 +9,7 @@ class Nav extends Component<HTMLDivElement, HTMLDivElement> {
         super('navbar', hostId, true);
         this.menuButton = this.element.querySelector(".menu-button")! as HTMLImageElement;
         this.balance = this.element.querySelector('.gold-balance')! as HTMLSpanElement;
-
+        
         this.configure();
     }
 
