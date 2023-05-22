@@ -21,11 +21,19 @@ function assignIcon(element: HTMLDivElement) {
   return index;
 }
 
+
+  // Assigns the winning icon
+ function assignWinningIcon(element: HTMLDivElement) {
+  console.log('Winning iNdex is: ', slotState.getWinningIndex);
+    element.innerHTML = `<img src=${slotState.getSpinsetItems[slotState.getWinningIndex].src} alt=${slotState.getSpinsetItems[slotState.getWinningIndex].name}/>`;
+    return slotState.getWinningIndex;
+  };
+
 function assignIconSetIcons(set: HTMLDivElement, isStopSet: boolean, isLastColumn: boolean): void {
   let iconElements = set.querySelectorAll(".spin-icon") as NodeListOf<HTMLDivElement>;
   iconElements.forEach((iconElement) => assignIcon(iconElement));
   if (isStopSet && slotState.getIsWin) {
-    slotState.assignWinningIcon(iconElements[1]);
+    assignWinningIcon(iconElements[1]);
   } else if (isStopSet && isLastColumn) {
     // This and the following else if prevent an accidental win and can surely be implemented better in the assignment process
     let assignedIndex;

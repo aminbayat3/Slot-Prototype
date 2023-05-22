@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./dist/app.js" defer></script>
     <script type="module" src="./dist/shop.js" defer></script>
     <link rel="stylesheet" href="/dist/app.css" />
     <title>Slot Machine</title>
@@ -26,13 +27,29 @@
         <img class="menu-button" src="./public/images/menu-button.png" alt="menu button" />
         <div class="position-relative">
           <img class="coin-counter" src="./public/images/coin-counter.png" alt="coin counter" />
-          <span class="gold-balance position-absolute">0</span>
+          <span class="gold-balance position-absolute"></span>
         </div>
       </div>
     </template>
 
       <div id="shop">
-        <div 
+        <div class="shop-container center position-relative">
+          <img class="shop-image" src="./public/images/shop-container.png" alt="shop container" />
+          <img class="shop-shadow position-absolute" src="./public/images/shop-shadow.png" alt="shop shadow" />
+          <img class="left-coins position-absolute" src="./public/images/left-coins.png" alt="left coins" />
+          <img class="right-coins position-absolute" src="./public/images/right-coins.png" alt="right coins" />
+          <div class="shop-items-arrows position-absolute">
+            <img class="shop-items-left-arrow position-absolute" src="./public/images/left-arrow.png" alt="left arrow" />
+            <img class="shop-items-right-arrow position-absolute" src="./public/images/right-arrow.png" alt="right arrow" />
+          </div>
+          <div class="shop-items position-absolute d-flex">
+            <img class="shop-item" src="./public/images/shop-art1.png" alt="item" />
+            <img class="shop-item" src="./public/images/shop-art2.png" alt="item" />
+            <img class="shop-item" src="./public/images/shop-art3.png" alt="item" />
+            <img class="shop-item" src="./public/images/shop-art4.png" alt="item" />
+            <img class="shop-item" src="./public/images/shop-coin.png" alt="item" />
+          </div>
+        </div>
       </div>
 </body>
 </html>

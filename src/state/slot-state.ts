@@ -1,29 +1,28 @@
 import { SPINSET_ITEMS } from "../slot.data";
 import { Item } from "../interfaces/spinset-item.interface";
 
-type Listener<T> = (
-  winPercentage: number,
-  isSpinning: boolean,
-  isWin: boolean,
-  winningIndex: number,
-  goldBalance: number,
-  isLost: boolean,
-  Items: T[] 
-) => void;
+// winPercentage: number,
+//   isSpinning: boolean,
+//   isWin: boolean,
+//   winningIndex: number,
+//   goldBalance: number,
+//   isLost: boolean,
+//   Items: T[] 
+type Listener = (goldBalance: number) => void;
 
-class State<T> {
-  protected listeners: Listener<T>[];
+class State {
+  protected listeners: Listener[];
 
   constructor() {
     this.listeners = [];
   }
 
-  addListener(listenerFn: Listener<T>) {
+  addListener(listenerFn: Listener) {
     this.listeners.push(listenerFn);
   }
 }
 
-class SlotState extends State<Item> {
+class SlotState extends State {
   private static instance: SlotState;
   private winPercentage: number;
   private isSpinning: boolean;
@@ -31,7 +30,8 @@ class SlotState extends State<Item> {
   private winningIndex: number;
   private columnsFinishedSpinning: number;
   private spinsetItems: Item[];
-  private goldBalance: number;
+  private betAmount: number;
+  public goldBalance: number;
   private isLost: boolean;
 
   static getInstance() {
@@ -92,16 +92,6 @@ class SlotState extends State<Item> {
     return this.spinsetItems;
   }
 
-  public get getGoldBalance() {
-    if(this.goldBalance > 0) {
-      return this.goldBalance;
-    }
-    return 0;
-  }
-  public set setGoldBalance(value: number) {
-    this.goldBalance += value;
-  }
-
   constructor() {
     super();
     this.isSpinning = false; // used to prevent further spinnings
@@ -110,15 +100,10 @@ class SlotState extends State<Item> {
     this.winPercentage = 0.5; // ~every 2nd spin should be a win
     this.columnsFinishedSpinning = 0;
     this.spinsetItems = SPINSET_ITEMS;
-    this.goldBalance = 0;
+    this.goldBalance = 1000;
+    this.betAmount = 20;
     this.isLost = false;
   }
-
-  // Assigns the winning icon
-  assignWinningIcon = (element: HTMLDivElement) => {
-    element.innerHTML = `<img src=${this.spinsetItems[this.winningIndex].src} alt=${this.spinsetItems[this.winningIndex].name}/>`;
-    return this.winningIndex;
-  };
 
   showEndScreen = () => {
     // TODO: Display whatever we need after a spin
@@ -132,6 +117,41 @@ class SlotState extends State<Item> {
       this.isSpinning = false;
     }
   };
+
+  setGoldBalanceAfterEachSpin = () => {
+    if(this.goldBalance >= this.betAmount) {
+      this.goldBalance -= this.betAmount;
+      console.log(this.betAmount, 'reduced');
+    } else {
+      // I dont know about lose situation
+    }
+    this.updateBalanceListener();
+  }
+
+  setGoldBalanceAfterEachWin = () => {
+    if(this.isWin) {
+      this.goldBalance += this.spinsetItems[this.winningIndex].value;
+      console.log(this.spinsetItems[this.winningIndex].value, 'increased');
+    }
+    this.updateBalanceListener();
+  }
+
+  private updateBalanceListener = () => {
+    for (const listenerFn of this.listeners) {
+      listenerFn(this.goldBalance);
+    }
+  }
+
+  private saveToLocalStorage = () => {
+    const data = {
+      winningIndex: this.winningIndex,
+      
+    }
+  }
+
+  private updateLocalStorage = () => {
+    
+  }
 }
 
 export const slotState = SlotState.getInstance();

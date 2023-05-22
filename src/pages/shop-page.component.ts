@@ -1,15 +1,12 @@
-import Nav from "../components/nav.component";
-import Sidebar from "../components/sidebar.component";
-import { handleMenuButtonClick, handleCrossButtonClick } from "../slot.utils";
+import Page from "./base-page.component";
 
-class Shop {
+import { PAGE_TYPE } from "./base-page.component";
+
+class Shop extends Page {
     private static instance: Shop;
-    private nav: Nav;
-    private sidebar: Sidebar;
 
     constructor() {
-        this.nav = new Nav('shop');
-        this.sidebar = new Sidebar('shop');
+      super(PAGE_TYPE.shop);
 
         this.configure();
     }  
@@ -21,11 +18,6 @@ class Shop {
         this.instance = new Shop();
         return this.instance;
       };
-    
-    configure = () => {
-        this.nav.menuButton.addEventListener("click", handleMenuButtonClick);
-        this.sidebar.crossButton.addEventListener("click", handleCrossButtonClick);
-    }
 }
 
-Shop.getInstance();
+ Shop.getInstance();

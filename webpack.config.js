@@ -4,9 +4,10 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: {
-    app: "./src/pages/home-page.component.ts",
+    home: "./src/pages/home-page.component.ts",
     shop: './src/pages/shop-page.component.ts',
     inventory: './src/pages/inventory-page.component.ts',
+    app: "./src/app.ts",
   },
   devServer: {
     static: [
@@ -24,7 +25,7 @@ module.exports = {
   devtool: "inline-source-map",
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "app.css", //[name].css
     }),
   ],
   module: {

@@ -1,0 +1,276 @@
+@use "../util" as u;
+
+// HOME PAGE
+%hand {
+    z-index: 8;
+    width: u.rem(155);
+    height: u.rem(67.75);
+    top: 20.5%;
+  
+    @include u.breakpoint-up("xl") {
+      top: 21%;
+      width: u.rem(266);
+      height: u.rem(116);
+    }
+  }
+  
+  %button {
+    z-index: 8;
+    img {
+      left: 31%;
+      bottom: -18%;
+      width: u.rem(230);
+      height: u.rem(75);
+  
+      @include u.breakpoint-up("xl") {
+        bottom: -15%;
+        width: u.rem(350);
+        height: u.rem(118.52);
+      }
+    }
+  }
+  
+  #home {
+    min-height: 83vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    @include u.breakpoint-up("xl") {
+      min-height: 84.5vh;
+    }
+  }
+  
+  .sidebar {
+    left: u.rem(-431);
+    top: 0;
+    z-index: 10;
+    width: u.rem(380.27);
+    height: 100%;
+    background-image: url("../public/images/side-bar.png");
+    background-size: cover;
+    background-position: center center;
+  
+    &.active {
+      @include u.animate(slideIn, 0.7s, ease-in-out, forwards);
+    }
+  
+    &.inactive {
+      @include u.animate(slideOut, 0.7s, ease-in-out, forwards);
+    }
+  
+    .exit {
+      width: u.rem(44);
+      height: u.rem(41);
+      cursor: pointer;
+  
+      @include u.breakpoint-up("xl") {
+        width: u.rem(67);
+        height: u.rem(62);
+      }
+    }
+  
+    .options {
+      text-align: left;
+  
+      a {
+        font-size: u.rem(28);
+  
+        &.home,
+        &.shop,
+        &.inventory {
+          color: darken(u.$primaryColor, 15%);
+        }
+      }
+    }
+  
+    @include u.breakpoint-up("xl") {
+      width: u.rem(430);
+    }
+  }
+  
+  .nav {
+    .menu-button {
+      width: u.rem(48);
+      height: u.rem(45.82);
+      cursor: pointer;
+  
+      @include u.breakpoint-up("xl") {
+        width: u.rem(70);
+        height: u.rem(68);
+      }
+    }
+  
+    .coin-counter {
+      width: u.rem(130);
+      height: u.rem(45.61);
+  
+      @include u.breakpoint-up("xl") {
+        width: u.rem(197);
+        height: u.rem(69.59);
+      }
+    }
+  
+    .gold-balance {
+      left: 50%;
+      top: 20%;
+  
+      @include u.breakpoint-up("xl") {
+        left: 52%;
+        top: 29%;
+        font-size: u.rem(19);
+      }
+    }
+  }
+  
+  .slot-machine-container {
+    width: u.rem(590);
+    height: u.rem(468.26);
+  
+    .slot-machine-img {
+      width: 100%;
+      height: 100%;
+      z-index: 4;
+    }
+  
+    #spin-container {
+      position: relative;
+      .spin {
+        height: u.rem(303.27);
+        width: u.rem(153);
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        .spin-icon-set {
+          position: absolute;
+          align-items: center;
+  
+          .spin-icon {
+            height: u.rem(101.09);
+            width: u.rem(153);
+            img {
+              height: 100%;
+              width: 100%;
+            }
+  
+            @include u.breakpoint-up("xl") {
+              width: u.rem(260);
+              height: u.rem(171.79);
+            }
+          }
+        }
+  
+        @include u.breakpoint-up("xl") {
+          height: u.rem(515.37);
+          width: u.rem(260);
+        }
+      }
+    }
+  
+    .slot-shadow {
+      left: -15%;
+      bottom: -5%;
+  
+      @include u.breakpoint-up("xl") {
+        left: -15%;
+        bottom: -2%;
+      }
+    }
+  
+    .right-hand {
+      @extend %hand;
+      right: 11%;
+    }
+  
+    .left-hand {
+      @extend %hand;
+      left: 11%;
+    }
+  
+    .arrow {
+      z-index: 8;
+      right: 6.4%;
+      width: u.rem(58);
+      height: u.rem(61.8);
+      top: 54.5%;
+  
+      @include u.breakpoint-up("xl") {
+        top: 56%;
+        width: u.rem(90);
+        height: u.rem(97);
+      }
+    }
+  
+    .start-button {
+      @extend %button;
+      cursor: pointer;
+    }
+  
+    .pressed-button {
+      @extend %button;
+      display: none;
+  
+      img {
+        height: u.rem(53.08);
+        bottom: -16.5%;
+  
+        @include u.breakpoint-up("xl") {
+          bottom: -14%;
+          height: u.rem(80.77);
+        }
+      }
+    }
+  
+    .scene-coin {
+      z-index: 8;
+      left: -21%;
+      bottom: -3%;
+      width: u.rem(60);
+      height: u.rem(35);
+  
+      @include u.breakpoint-up("xl") {
+        width: u.rem(90);
+        height: u.rem(53);
+      }
+    }
+  
+    .scene-coins {
+      z-index: 8;
+      right: -23%;
+      bottom: -5%;
+      width: u.rem(66);
+      height: u.rem(52);
+  
+      @include u.breakpoint-up("xl") {
+        width: u.rem(93);
+        height: u.rem(73);
+      }
+    }
+  
+    @include u.breakpoint-up("xl") {
+      width: u.rem(1013);
+      height: u.rem(827);
+    }
+  }
+  
+  @include u.keyframes(slideIn) {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+      left: 0;
+    }
+  }
+  
+  @include u.keyframes(slideOut) {
+    from {
+      left: 0;
+    }
+  
+    to {
+      left: -431;
+    }
+  }
+  

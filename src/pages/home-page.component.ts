@@ -1,26 +1,21 @@
 import Slot from "../components/slot.component";
-import Nav from "../components/nav.component";
-import Sidebar from "../components/sidebar.component";
-import {
-  resetSpinIconSets,
-  handleMenuButtonClick,
-  handleCrossButtonClick,
-} from "../slot.utils";
+import { resetSpinIconSets } from "../slot.utils";
+import Page from "./base-page.component";
+import { PAGE_TYPE } from "./base-page.component";
 
 import "../main.scss";
 
-class Home {
+class Home extends Page {
   private static instance: Home;
-  private nav: Nav;
-  private sidebar: Sidebar;
   private slot: Slot;
 
   constructor() {
-    this.nav = new Nav('home');
-    this.sidebar = new Sidebar('home');
+    super(PAGE_TYPE.home);
     this.slot = Slot.getInstance();
 
     this.configure();
+    this.renderSlot();
+
     // Initalize stuff
     resetSpinIconSets();
   }
@@ -33,11 +28,9 @@ class Home {
     return this.instance;
   };
 
-  configure = () => {
+  renderSlot = () => {
     this.slot.startButton.addEventListener("click", this.slot.startSpin);
-    this.nav.menuButton.addEventListener("click", handleMenuButtonClick);
-    this.sidebar.crossButton.addEventListener("click", handleCrossButtonClick);
   };
 }
 
-Home.getInstance();
+const home = Home.getInstance();

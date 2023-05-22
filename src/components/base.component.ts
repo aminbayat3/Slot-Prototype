@@ -1,5 +1,5 @@
 // Component Base Class
-export default abstract class Component<T extends HTMLElement, U extends HTMLElement> {
+abstract class Component<T extends HTMLElement, U extends HTMLElement> {
     templateElement: HTMLTemplateElement;
     hostElement: T;
     protected element: U;
@@ -39,3 +39,6 @@ export default abstract class Component<T extends HTMLElement, U extends HTMLEle
       );
     }
   }   
+
+
+export default Component;

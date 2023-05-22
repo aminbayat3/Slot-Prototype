@@ -1,16 +1,11 @@
-import Nav from "../components/nav.component";
-import Sidebar from "../components/sidebar.component";
-import { handleMenuButtonClick, handleCrossButtonClick } from "../slot.utils";
+import Page from "./base-page.component";
+import { PAGE_TYPE } from "./base-page.component";
 
-class Inventory {
+class Inventory extends Page {
     private static instance: Inventory;
-    private nav: Nav;
-    private sidebar: Sidebar;
 
     constructor() {
-        this.nav = new Nav('inventory');
-        this.sidebar = new Sidebar('inventory');
-
+      super(PAGE_TYPE.inventory);
         this.configure();
     }  
     
@@ -21,11 +16,6 @@ class Inventory {
         this.instance = new Inventory();
         return this.instance;
       };
-    
-    configure = () => {
-        this.nav.menuButton.addEventListener("click", handleMenuButtonClick);
-        this.sidebar.crossButton.addEventListener("click", handleCrossButtonClick);
-    }
 }
 
 Inventory.getInstance();

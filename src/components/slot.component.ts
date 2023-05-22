@@ -1,5 +1,4 @@
 import Component from "./base.component";
-import { SPINSET_ITEMS } from "../slot.data";
 import { getIconIndexWithValue } from "../slot.utils";
 import { slotState } from "../state/slot-state";
 import { delay } from "../slot.utils";
@@ -39,6 +38,9 @@ class Slot extends Component<HTMLDivElement, HTMLDivElement>  {
     startSpin = () => {
       if (!slotState.getIsSpinning) {
         slotState.setIsSpinning = true;
+
+        slotState.setGoldBalanceAfterEachSpin();
+
         this.startButton.style.display = 'none';
         this.pressedButton.style.display = 'block';
         delay(1900).then(() => {
@@ -63,14 +65,16 @@ class Slot extends Component<HTMLDivElement, HTMLDivElement>  {
       slotState.setIsWin = Math.random() < slotState.getWinPercentage;
       if (slotState.getIsWin) {
         slotState.setWinningIndex = getIconIndexWithValue(Math.random());
-        console.log("WIN! - Nice, you get: " +  SPINSET_ITEMS[slotState.getWinningIndex].name);
+        console.log("WIN! - Nice, you get: " +  slotState.getSpinsetItems[slotState.getWinningIndex].name);
       } else {
         console.log("Loss! - Better luck next time");
       }
-  
+
+      delay(1700).then(() => {
+        slotState.setGoldBalanceAfterEachWin();
+      }); 
       // let columns = document.querySelectorAll(".spin");
       for (let i = 0; i < this.numOfColumns; i++) {
-        
         setTimeout(
           this.columns[i].spinSingleColumn,
           i * 250,
