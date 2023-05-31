@@ -1,6 +1,6 @@
 @use "../util" as u;
 
-%page {
+%screen {
   font-family: u.$font;
   margin: 0;
   padding: u.rem(15) u.rem(15) 0 u.rem(15);
@@ -28,13 +28,33 @@ html {
   scroll-behavior: smooth;
 }
 
-.home-page {
-  @extend %page;
+.not-active{
+  display:none;
+}
+
+#title-screen{
+  @extend %screen;
+}
+
+#menu-screen{
+  @extend %screen
+}
+
+#in-game-screen{
+  @extend %screen
+}
+
+#slot-machine-screen {
+  @extend %screen;
   text-align: center;
   background-image: url("../public/images/home-background.png");
 }
 
-.shop-page {
-  @extend %page;
+#shop-screen {
+  @extend %screen;
   background-image: url("../public/images/shop-background.png");
+}
+
+#inventory-screen{
+  @extend %screen
 }

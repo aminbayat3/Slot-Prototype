@@ -6,7 +6,7 @@ module.exports = {
   mode: "production",
   entry: {
     app: {
-      import: './src/app.ts', 
+      import: './src/main.ts',
       dependOn: 'styles',
     },
     styles: {

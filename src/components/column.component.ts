@@ -1,12 +1,14 @@
 import Component from "./base.component";
 import { resetSpinIconSetPositions, spinIconSet } from "../slot.utils";
-import { slotState } from "../state/slot-state";
+import SlotState from "../state/slot-state";
 
 class Column extends Component<HTMLDivElement, HTMLDivElement> {
   private slowDownSpinCount: number;
+  private slotState: SlotState;
 
-  constructor(hostId: string) {
+  constructor(hostId: string, slotState: SlotState) {
     super('single-column', hostId, false);
+    this.slotState = slotState;
     this.slowDownSpinCount = 2; // Spin Count after which the slowdown takes place
   }
 
@@ -19,6 +21,7 @@ class Column extends Component<HTMLDivElement, HTMLDivElement> {
 
     let distance = 35; // TODO: This has to be changed to account for time since last iteration
     let currentSpinCount = 0;
+    let currentSlotState = this.slotState;
     (function loop() {
       setTimeout(() => {
         if (currentSpinCount >= endSpinCount - self.slowDownSpinCount) {
@@ -36,7 +39,7 @@ class Column extends Component<HTMLDivElement, HTMLDivElement> {
         });
         if (currentSpinCount >= endSpinCount) {
           resetSpinIconSetPositions(spinSetsOfColumn);
-          slotState.endColumnSpin();
+          currentSlotState.endColumnSpin();
         } else {
           loop();
         }

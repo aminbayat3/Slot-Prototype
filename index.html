@@ -1,71 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Slot Machine</title>
-    <link rel="stylesheet" href="/dist/app.css" />
-    <script type="module" src="./dist/home.js" defer></script>
-  </head>
-  <body class="home-page">
-    <!-- NavBar And Sidebar -->
-    <template id="side">
-      <div class="sidebar position-absolute d-flex flex-column py-6 px-5">
-        <img class="exit mb-7" src="./public/images/exit.png" alt="cross" />
-        <ul class="options px-4">
-          <li class="mb-5"><a href="index.html" class="home" id="homeLink">Home</a></li>
-          <li class="mb-5"><a href="shop.html" id="shopLink">Shop</a></li>
-          <li class="mb-5"><a href="inventory.html" id="inventoryLink">Inventory</a></li>
-        </ul>
-      </div> 
-    </template>
-    
-    <template id="navbar">
-      <div class="nav w-100 d-flex space-between">
-        <img class="menu-button" src="./public/images/menu-button.png" alt="menu button" />
-        <div class="position-relative">
-          <img class="coin-counter" src="./public/images/coin-counter.png" alt="coin counter" />
-          <span class="gold-balance position-absolute"></span>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slotmachine Game</title>
+    <link rel="stylesheet" href="/dist/styles.css" />
+    <script src="/dist/app.js" defer></script>
+</head>
+<body>
+    <div id="game-window">
+        <div id="title-screen">
         </div>
-      </div>
-    </template>
-    
-    <!-- A single Column -->
-    <template  id="single-column">
-      <div class="spin position-relative center">
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
-        <div class="spin-icon-set">
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-          <div class="spin-icon"></div>
-        </div>
-      </div>
-    </template>
-    
-    <template id="slot-machine">
-      <div class="slot-machine-container mx-auto d-flex flex-column justify-content-end position-relative">
-        <img class="right-hand position-absolute" src="./public/images/right-hand.png" alt="right hand" />
-        <img class="left-hand position-absolute" src="./public/images/left-hand.png" alt="left hand" />
-        <img class="arrow position-absolute" src="./public/images/arrow.png" alt="arrow" />
-        <img class="slot-machine-img position-absolute" src="./public/images/slot-machine.png" alt="slot-machine" />
-        <img class="slot-shadow position-absolute" src="./public/images/slot-shadow.png" alt="slot shadow" /> 
-        <img class="scene-coin position-absolute" src="./public/images/scene-coin.png" alt="scene coin" />
-        <img class="scene-coins position-absolute" src="./public/images/scene-coins.png" alt="scene coins" />
-       
-        <div class="d-flex center overflow-hidden mb-5 mb-xl-7"></div>
+        <div id="menu-screen" class="not-active"></div>
+        <div id="in-game-screen" class="not-active"></div>
+        <div id="slot-machine-screen" class="not-active">
 
-        <div class="start-button"><img class="w-100 h-100 position-absolute" src="./public/images/button.png" alt="button"/></div>
-        <div class="pressed-button"><img class="w-100 h-100 position-absolute" src="./public/images/button_pressed.png" alt="button"/></div>
-      </div>
-    </template>
-    
-    <div id="home"></div>
-  </body>
+            <template  id="single-column">
+                <div class="spin position-relative center">
+                    <div class="spin-icon-set">
+                        <div class="spin-icon"></div>
+                        <div class="spin-icon"></div>
+                        <div class="spin-icon"></div>
+                    </div>
+                    <div class="spin-icon-set">
+                        <div class="spin-icon"></div>
+                        <div class="spin-icon"></div>
+                        <div class="spin-icon"></div>
+                    </div>
+                    <div class="spin-icon-set">
+                        <div class="spin-icon"></div>
+                        <div class="spin-icon"></div>
+                        <div class="spin-icon"></div>
+                    </div>
+                </div>
+            </template>
+
+            <div class="slot-machine-container mx-auto d-flex flex-column justify-content-end position-relative">
+                <img class="right-hand position-absolute" src="./public/images/right-hand.png" alt="right hand" />
+                <img class="left-hand position-absolute" src="./public/images/left-hand.png" alt="left hand" />
+                <img class="arrow position-absolute" src="./public/images/arrow.png" alt="arrow" />
+                <img class="slot-machine-img position-absolute" src="./public/images/slot-machine.png" alt="slot-machine" />
+                <img class="slot-shadow position-absolute" src="./public/images/slot-shadow.png" alt="slot shadow" />
+                <img class="scene-coin position-absolute" src="./public/images/scene-coin.png" alt="scene coin" />
+                <img class="scene-coins position-absolute" src="./public/images/scene-coins.png" alt="scene coins" />
+
+                <div class="d-flex center overflow-hidden mb-5 mb-xl-7"></div>
+
+                <div class="start-button"><img class="w-100 h-100 position-absolute" src="./public/images/button.png" alt="button"/></div>
+                <div class="pressed-button"><img class="w-100 h-100 position-absolute" src="./public/images/button_pressed.png" alt="button"/></div>
+            </div>
+        </div>
+        <div id="shop-screen" class="not-active">
+            <div id="shop">
+                <div class="shop-container center position-relative">
+                    <img class="shop-image" src="./public/images/shop-container.png" alt="shop container" />
+                    <img class="shop-shadow position-absolute" src="./public/images/shop-shadow.png" alt="shop shadow" />
+                    <img class="left-coins position-absolute" src="./public/images/left-coins.png" alt="left coins" />
+                    <img class="right-coins position-absolute" src="./public/images/right-coins.png" alt="right coins" />
+                    <div class="shop-items-arrows position-absolute">
+                        <img class="shop-items-left-arrow position-absolute" src="./public/images/left-arrow.png" alt="left arrow" />
+                        <img class="shop-items-right-arrow position-absolute" src="./public/images/right-arrow.png" alt="right arrow" />
+                    </div>
+                    <div class="shop-items position-absolute d-flex">
+                        <img class="shop-item" src="./public/images/shop-art1.png" alt="item" />
+                        <img class="shop-item" src="./public/images/shop-art2.png" alt="item" />
+                        <img class="shop-item" src="./public/images/shop-art3.png" alt="item" />
+                        <img class="shop-item" src="./public/images/shop-art4.png" alt="item" />
+                        <img class="shop-item" src="./public/images/shop-coin.png" alt="item" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="inventory-screen" class="not-active"></div>
+        <div id="side-bar-wrapper" class="not-active">
+            <img id="show-sidebar-button" class="menu-button" src="./public/images/menu-button.png" alt="menu button" />
+            <div id="side-bar" class="sidebar position-absolute d-flex flex-column py-6 px-5">
+                <img id="hide-sidebar-button" class="exit mb-7" src="./public/images/exit.png" alt="cross" />
+                <ul class="options px-4">
+                    <li class="mb-5"><span id="side-bar-option-title">Back to Title Screen</span></li>
+                    <li class="mb-5"><span id="side-bar-option-story">Story</span></li>
+                    <li class="mb-5"><span id="side-bar-option-slot-machine">Slot machine</span></li>
+                    <li class="mb-5"><span id="side-bar-option-shop">Shop</span></li>
+                    <li class="mb-5"><span id="side-bar-option-inventory">Inventory</span></li>
+                </ul>
+            </div>
+        </div>
+        <div id="coin-counter-wrapper" class="nav w-100 d-flex space-between not-active">
+            <div class="position-relative">
+                <img class="coin-counter" src="./public/images/coin-counter.png" alt="coin counter" />
+                <span id="coin-counter-balance" class="gold-balance position-absolute">0</span>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

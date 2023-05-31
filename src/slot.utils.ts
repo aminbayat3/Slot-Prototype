@@ -1,12 +1,12 @@
-import { slotState } from "./state/slot-state";
+import SlotState from "./state/slot-state";
 
 let lastStopSetMiddleAssignment = 0;
 
 function getIconIndexWithValue(randomValue: number) {
   // Via this function all of the icon assignments as well as the outcome in case of a winning spin is determined
   let cumulativePercentage = 0;
-  for (let i = 0; i < slotState.getSpinsetItems.length; i++) {
-    cumulativePercentage += slotState.getSpinsetItems[i].percentage;
+  for (let i = 0; i < SlotState.instance.getSpinsetItems.length; i++) {
+    cumulativePercentage += SlotState.instance.getSpinsetItems[i].percentage;
     if (randomValue < cumulativePercentage) {
       return i;
     }
@@ -17,22 +17,22 @@ function getIconIndexWithValue(randomValue: number) {
 // Assigns a random icon
 function assignIcon(element: HTMLDivElement) {
   let index = getIconIndexWithValue(Math.random());
-  element.innerHTML = `<img src=${slotState.getSpinsetItems[index].src} alt=${slotState.getSpinsetItems[index].name}/>`;
+  element.innerHTML = `<img src=${SlotState.instance.getSpinsetItems[index].src} alt=${SlotState.instance.getSpinsetItems[index].name}/>`;
   return index;
 }
 
 
   // Assigns the winning icon
  function assignWinningIcon(element: HTMLDivElement) {
-  console.log('Winning iNdex is: ', slotState.getWinningIndex);
-    element.innerHTML = `<img src=${slotState.getSpinsetItems[slotState.getWinningIndex].src} alt=${slotState.getSpinsetItems[slotState.getWinningIndex].name}/>`;
-    return slotState.getWinningIndex;
+  console.log('Winning iNdex is: ', SlotState.instance.getWinningIndex);
+    element.innerHTML = `<img src=${SlotState.instance.getSpinsetItems[SlotState.instance.getWinningIndex].src} alt=${SlotState.instance.getSpinsetItems[SlotState.instance.getWinningIndex].name}/>`;
+    return SlotState.instance.getWinningIndex;
   };
 
 function assignIconSetIcons(set: HTMLDivElement, isStopSet: boolean, isLastColumn: boolean): void {
   let iconElements = set.querySelectorAll(".spin-icon") as NodeListOf<HTMLDivElement>;
   iconElements.forEach((iconElement) => assignIcon(iconElement));
-  if (isStopSet && slotState.getIsWin) {
+  if (isStopSet && SlotState.instance.getIsWin) {
     assignWinningIcon(iconElements[1]);
   } else if (isStopSet && isLastColumn) {
     // This and the following else if prevent an accidental win and can surely be implemented better in the assignment process
@@ -87,18 +87,4 @@ function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function handleMenuButtonClick() {
-  const sidebar = document.querySelector('.sidebar')! as HTMLDivElement;
-  if(sidebar.classList[1]) {
-    sidebar.classList.remove('inactive');
-  }
-  sidebar.classList.add('active');
-}
-
-function handleCrossButtonClick() {
-  const sidebar = document.querySelector('.sidebar')! as HTMLDivElement;
-  sidebar.classList.add('inactive');
-  sidebar.classList.remove('active');
-}
-
-export { resetSpinIconSetPositions, resetSpinIconSets, getIconIndexWithValue, assignIcon, spinIconSet, delay, handleMenuButtonClick, handleCrossButtonClick };
+export { resetSpinIconSetPositions, resetSpinIconSets, getIconIndexWithValue, assignIcon, spinIconSet, delay };
