@@ -1,0 +1,105 @@
+@use "../util" as u;
+
+#sidebar-screen{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+
+  .hide-sidebar{
+    left: -576px;
+  }
+
+  .show-sidebar{
+    left: 0;
+  }
+
+  .sidebar-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    position: absolute;
+    height: 100%;
+    transition: left 0.5s;
+    transition-timing-function: cubic-bezier(.17,.84,.44,1);
+
+    .sidebar-show-button, .sidebar-hide-button{
+      margin: 32px;
+      width: 88px;
+      height: 88px;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    .sidebar-show-button{
+      background-image: url('/public/images/ui/menu-button.png');
+    }
+
+    .sidebar-hide-button{
+      background-image: url("/public/images/ui/close-button.png");
+    }
+
+    .sidebar{
+      position: relative;;
+      background-image: url('/public/images/ui/sidebar-background.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right;
+      height: 100%;
+      width: 576px;
+
+      &:after{
+        position: absolute;
+        display: block;
+        content: "";
+        background-image: url("/public/images/ui/menu-decoration-vertical.png");
+        width: 28px;
+        height: 100%;
+        right: 0;
+        top: 0;
+      }
+
+      .sidebar-title{
+        text-align: center;
+        line-height: 56px;
+        height:56px;
+        font-size: 48px;
+        font-family: u.$font;
+        margin: 10% 0;
+      }
+
+      ul{
+        margin-right: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        li{
+          background-image: url("/public/images/ui/menu-option.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          font-family: u.$font;
+          text-align: center;
+          padding: 15px 5%;
+          margin: 15px;
+          width: 392px;
+          height: 76px;
+          font-size: 28px;
+          line-height: 76px;
+
+          &:hover{
+            cursor: pointer;
+            color: u.$whiteColor;
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -2,11 +2,10 @@
   "name": "prototype",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "private": true,
   "scripts": {
     "start": "webpack-dev-server",
-    "dev": "webpack --config webpack.config.js",
-    "build": "webpack --config webpack.config.prod.js"
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",

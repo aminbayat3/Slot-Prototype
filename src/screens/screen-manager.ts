@@ -1,20 +1,21 @@
 import SlotMachineScreen from "./slot-machine-screen";
-import GameData from "../game-data";
+import GameData from "../models/game-data";
 import TitleScreen from "./title-screen";
-import MenuScreen from "./menu-screen";
+import SettingsScreen from "./settings-screen";
 import InGameScreen from "./in-game-screen";
 import ShopScreen from "./shop-screen";
 import InventoryScreen from "./inventory.screen";
-import sideBarScreen from "./side-bar-screen";
+import sideBarScreen from "./sidebar-screen";
 import CoinCounterScreen from "./coin-counter.screen";
-import SidebarScreen from "./side-bar-screen";
+import SidebarScreen from "./sidebar-screen";
+import {GameManager} from "../logic/game-manager";
 
 class ScreenManager{
 
-    private gameData: GameData;
+    private gameManager: GameManager;
 
     private titleScreen: TitleScreen;
-    private menuScreen: MenuScreen;
+    private settingsScreen: SettingsScreen;
     private inGameScreen: InGameScreen;
     private slotMachineScreen: SlotMachineScreen;
     private shopScreen: ShopScreen;
@@ -22,21 +23,22 @@ class ScreenManager{
     private sideBarScreen: sideBarScreen;
     private coinCounterScreen: CoinCounterScreen;
 
-    constructor(gameData: GameData) {
-        this.gameData = gameData;
-        this.titleScreen = new TitleScreen();
-        this.menuScreen = new MenuScreen();
+    constructor(gameManager: GameManager) {
+        this.gameManager = gameManager;
+        this.titleScreen = new TitleScreen(this, this.gameManager);
+        this.settingsScreen = new SettingsScreen();
         this.inGameScreen = new InGameScreen();
-        this.slotMachineScreen = new SlotMachineScreen(gameData);
+        this.slotMachineScreen = new SlotMachineScreen(this.gameManager);
         this.shopScreen = new ShopScreen();
         this.inventoryScreen = new InventoryScreen();
         this.sideBarScreen = new SidebarScreen(this); // note: instead of passing this, we could also assign onclick functions via methods
-        this.coinCounterScreen = new CoinCounterScreen(gameData);
+        this.coinCounterScreen = new CoinCounterScreen(this.gameManager);
+        document.addEventListener("keydown", (event) => {if(event.keyCode === 32){ this.inGameScreen.getDialogueManager().handleInput()}});
     }
 
     setActiveScreens(title:boolean,menu:boolean,ingame:boolean,slotmachine:boolean,shop:boolean,inventory:boolean,sidebar:boolean,coincounter:boolean):void{
         this.titleScreen.showScreen(title);
-        this.menuScreen.showScreen(menu);
+        this.settingsScreen.showScreen(menu);
         this.inGameScreen.showScreen(ingame);
         this.slotMachineScreen.showScreen(slotmachine);
         this.shopScreen.showScreen(shop);
@@ -63,6 +65,13 @@ class ScreenManager{
     switchToInventoryScreen():void{
         this.setActiveScreens(false,false,false,false,false,true,true,true);
     }
+
+    public startNewGame(){
+        this.gameManager.startNewGame();
+        this.inGameScreen.getDialogueManager().startNewGame();
+        this.switchToInGameScreen();
+    }
+
 }
 
 export default ScreenManager;

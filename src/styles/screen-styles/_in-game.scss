@@ -1,0 +1,91 @@
+@use "../util" as u;
+
+#in-game-screen{
+  position: relative;
+
+
+  .background{
+    z-index: 1;
+  }
+
+  .character-left, .character-right{
+    z-index: 2;
+    position: absolute;
+    height: 80%;
+    bottom: 0;
+  }
+
+  .character-left{
+    left: 15%;
+    transform: translateX(-50%);
+  }
+
+  .character-right{
+    right: 15%;
+    transform: translateX(50%);
+    /*transform: scaleX(-1);*/
+  }
+
+  .not-speaker{
+    filter: brightness(65%);
+  }
+
+  .dialogue-wrapper{
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 289px;
+    bottom: 5%;
+    background-image: url("/public/images/ui/in-game/dialogue-background.png");
+    padding: 28px 5%;
+
+    &:before, &:after{
+      position: absolute;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 28px;
+      background-image: url("/public/images/ui/menu-decoration-horizontal.png");
+      left: 0;
+    }
+
+    &:before{
+      top: 0;
+    }
+
+    &:after{
+      bottom: 0;
+    }
+
+    .dialogue-name-left, .dialogue-name-right{
+      background-image: url("/public/images/ui/in-game/name-flair.png");
+      position: absolute;
+      top: -50px;
+      font-size: 48px;
+      text-align: center;
+      font-family: u.$font;
+      padding: 24px;
+      height:90px;
+      min-width: 256px;
+    }
+
+    .dialogue-name-left{
+      left: 15%;
+      transform: translateX(-50%);
+    }
+
+    .dialogue-name-right{
+      right: 15%;
+      transform: translateX(50%);
+    }
+
+    .dialogue-text{
+      font-size: 32px;
+      font-family: u.$font;
+    }
+  }
+
+
+}

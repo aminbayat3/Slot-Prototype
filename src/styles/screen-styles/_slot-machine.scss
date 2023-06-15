@@ -1,0 +1,30 @@
+@use "../util" as u;
+
+#slot-machine-screen{
+  background-image: url("/public/images/ui/slot-machine/slot_machine.png");
+
+  .column-wrapper{
+
+    .column{
+
+      .column-item-wrapper{
+
+        .column-item{
+
+        }
+      }
+    }
+  }
+
+  .hands{
+
+  }
+
+  .row-marker{
+
+  }
+
+  .spin-button{
+
+  }
+}

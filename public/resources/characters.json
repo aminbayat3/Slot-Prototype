@@ -1,0 +1,22 @@
+{
+  "0" : {
+    "id": "alex",
+    "name": "Alex",
+    "default": "public/images/characters/alex.png"
+  },
+  "1" : {
+    "id": "amanda",
+    "name": "Amanda",
+    "default": "public/images/characters/amanda.png"
+  },
+  "2" : {
+    "id": "godfather",
+    "name": "Godfather",
+    "default": "public/images/characters/godfather.png"
+  },
+  "3" : {
+    "id": "oracle",
+    "name": "The Oracle",
+    "default": "public/images/characters/oracle.png"
+  }
+}

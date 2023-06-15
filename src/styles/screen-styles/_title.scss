@@ -1,0 +1,54 @@
+@use "../util" as u;
+
+#title-screen{
+  background-image: url("/public/images/backgrounds/title-screen-background.png");
+
+  .title-screen-character{
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    height: 90%;
+  }
+
+  .main-menu{
+    background-image: url("/public/images/ui/sidebar-background.png");
+    position: absolute;
+    top: 0;
+    right: 15%;
+    height: 100%;
+    width: 560px;
+
+    .main-menu-title{
+      text-align: center;
+      line-height: 56px;
+      height:56px;
+      font-size: 48px;
+      font-family: u.$font;
+      margin: 10% 0;
+    }
+
+    ul{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      li{
+        background-image: url("/public/images/ui/menu-option.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: u.$font;
+        text-align: center;
+        margin: 15px;
+        width: 392px;
+        height: 76px;
+        font-size: 28px;
+        line-height: 76px;
+
+        &:hover{
+          cursor: pointer;
+          color: u.$whiteColor;
+        }
+      }
+    }
+  }
+}

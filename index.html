@@ -9,87 +9,118 @@
     <script src="/dist/app.js" defer></script>
 </head>
 <body>
-    <div id="game-window">
+    <div id="game-window" class="res1920x1080">
         <div id="title-screen">
-        </div>
-        <div id="menu-screen" class="not-active"></div>
-        <div id="in-game-screen" class="not-active"></div>
-        <div id="slot-machine-screen" class="not-active">
-
-            <template  id="single-column">
-                <div class="spin position-relative center">
-                    <div class="spin-icon-set">
-                        <div class="spin-icon"></div>
-                        <div class="spin-icon"></div>
-                        <div class="spin-icon"></div>
-                    </div>
-                    <div class="spin-icon-set">
-                        <div class="spin-icon"></div>
-                        <div class="spin-icon"></div>
-                        <div class="spin-icon"></div>
-                    </div>
-                    <div class="spin-icon-set">
-                        <div class="spin-icon"></div>
-                        <div class="spin-icon"></div>
-                        <div class="spin-icon"></div>
-                    </div>
-                </div>
-            </template>
-
-            <div class="slot-machine-container mx-auto d-flex flex-column justify-content-end position-relative">
-                <img class="right-hand position-absolute" src="./public/images/right-hand.png" alt="right hand" />
-                <img class="left-hand position-absolute" src="./public/images/left-hand.png" alt="left hand" />
-                <img class="arrow position-absolute" src="./public/images/arrow.png" alt="arrow" />
-                <img class="slot-machine-img position-absolute" src="./public/images/slot-machine.png" alt="slot-machine" />
-                <img class="slot-shadow position-absolute" src="./public/images/slot-shadow.png" alt="slot shadow" />
-                <img class="scene-coin position-absolute" src="./public/images/scene-coin.png" alt="scene coin" />
-                <img class="scene-coins position-absolute" src="./public/images/scene-coins.png" alt="scene coins" />
-
-                <div class="d-flex center overflow-hidden mb-5 mb-xl-7"></div>
-
-                <div class="start-button"><img class="w-100 h-100 position-absolute" src="./public/images/button.png" alt="button"/></div>
-                <div class="pressed-button"><img class="w-100 h-100 position-absolute" src="./public/images/button_pressed.png" alt="button"/></div>
-            </div>
-        </div>
-        <div id="shop-screen" class="not-active">
-            <div id="shop">
-                <div class="shop-container center position-relative">
-                    <img class="shop-image" src="./public/images/shop-container.png" alt="shop container" />
-                    <img class="shop-shadow position-absolute" src="./public/images/shop-shadow.png" alt="shop shadow" />
-                    <img class="left-coins position-absolute" src="./public/images/left-coins.png" alt="left coins" />
-                    <img class="right-coins position-absolute" src="./public/images/right-coins.png" alt="right coins" />
-                    <div class="shop-items-arrows position-absolute">
-                        <img class="shop-items-left-arrow position-absolute" src="./public/images/left-arrow.png" alt="left arrow" />
-                        <img class="shop-items-right-arrow position-absolute" src="./public/images/right-arrow.png" alt="right arrow" />
-                    </div>
-                    <div class="shop-items position-absolute d-flex">
-                        <img class="shop-item" src="./public/images/shop-art1.png" alt="item" />
-                        <img class="shop-item" src="./public/images/shop-art2.png" alt="item" />
-                        <img class="shop-item" src="./public/images/shop-art3.png" alt="item" />
-                        <img class="shop-item" src="./public/images/shop-art4.png" alt="item" />
-                        <img class="shop-item" src="./public/images/shop-coin.png" alt="item" />
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="inventory-screen" class="not-active"></div>
-        <div id="side-bar-wrapper" class="not-active">
-            <img id="show-sidebar-button" class="menu-button" src="./public/images/menu-button.png" alt="menu button" />
-            <div id="side-bar" class="sidebar position-absolute d-flex flex-column py-6 px-5">
-                <img id="hide-sidebar-button" class="exit mb-7" src="./public/images/exit.png" alt="cross" />
-                <ul class="options px-4">
-                    <li class="mb-5"><span id="side-bar-option-title">Back to Title Screen</span></li>
-                    <li class="mb-5"><span id="side-bar-option-story">Story</span></li>
-                    <li class="mb-5"><span id="side-bar-option-slot-machine">Slot machine</span></li>
-                    <li class="mb-5"><span id="side-bar-option-shop">Shop</span></li>
-                    <li class="mb-5"><span id="side-bar-option-inventory">Inventory</span></li>
+            <img class="title-screen-character" src="public/images/characters/alex.png" alt="Image of Alex">
+            <div class="main-menu">
+                <div class="main-menu-title">MAIN MENU</div>
+                <ul class="main-menu-options">
+                    <li id="main-menu-option-continue" class="not-active"><span>Continue</span></li>
+                    <li id="main-menu-option-new"><span>New Game</span></li>
+                    <li id="main-menu-option-load"><span>Load Game</span></li>
+                    <li id="main-menu-option-settings"><span>Settings</span></li>
+                    <li id="main-menu-option-credits"><span>Credits</span></li>
+                    <li id="main-menu-option-exit"><span>Exit Game</span></li>
                 </ul>
             </div>
         </div>
-        <div id="coin-counter-wrapper" class="nav w-100 d-flex space-between not-active">
-            <div class="position-relative">
-                <img class="coin-counter" src="./public/images/coin-counter.png" alt="coin counter" />
-                <span id="coin-counter-balance" class="gold-balance position-absolute">0</span>
+        <div id="menu-screen" class="not-active">
+
+        </div>
+        <div id="in-game-screen" class="not-active">
+            <img id="dialogue-background" src="" class="background" alt="environment image">
+            <img id="character-left" src="" class="character-left" alt="left character">
+            <img id="character-right" src="" class="character-right" alt="left character">
+            <div class="dialogue-wrapper">
+                <div id="character-name-left" class="dialogue-name-left"></div>
+                <div id="character-name-right" class="dialogue-name-right"></div>
+                <div id="dialogue-text" class="dialogue-text"></div>
+            </div>
+        </div>
+        <div id="slot-machine-screen" class="not-active">
+            <div class="column-wrapper">
+                <div class="column">
+                    <div class="column-set">
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                    </div>
+                    <div class="column-set">
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                    </div>
+                    <div class="column-set">
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-set">
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                    </div>
+                    <div class="column-set">
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                    </div>
+                    <div class="column-set">
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-set">
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                    </div>
+                    <div class="column-set">
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                    </div>
+                    <div class="column-set">
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                    </div>
+                </div>
+            </div>
+            <img class="hands" src="" alt="">
+            <img class="row-marker" src="" alt="">
+            <div class="spin-button"></div>
+        </div>
+        <div id="shop-screen" class="not-active">
+
+        </div>
+        <div id="inventory-screen" class="not-active">
+
+        </div>
+        <div id="sidebar-screen" class="not-active">
+            <div id="sidebar-wrapper" class="sidebar-wrapper hide-sidebar">
+                <div id="sidebar" class="sidebar">
+                    <div class="sidebar-title">Menu</div>
+                    <ul>
+                        <li id="sidebar-option-story"><span>Story</span></li>
+                        <li id="sidebar-option-slot-machine"><span>Slot machine</span></li>
+                        <li id="sidebar-option-shop"><span>Shop</span></li>
+                        <li id="sidebar-option-inventory"><span>Inventory</span></li>
+                        <li id="sidebar-option-settings"><span>Settings</span></li>
+                        <li id="sidebar-option-title"><span>Back to Title Screen</span></li>
+                    </ul>
+                </div>
+                <div id="show-sidebar-button" class="sidebar-show-button"></div>
+                <div id="hide-sidebar-button" class="sidebar-hide-button not-active"></div>
+            </div>
+        </div>
+        <div id="coin-counter-wrapper">
+            <div class="balance-wrapper">
+                <span id="coin-counter-balance" class="gold-balance">0</span>
             </div>
         </div>
     </div>

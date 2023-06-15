@@ -1,10 +1,12 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
-    app: "./src/main.ts"
+    app: './src/main.ts',
+    styles: './src/main.scss'
   },
   devServer: {
     static: [
@@ -14,17 +16,9 @@ module.exports = {
     ],
   },
   output: {
-    filename: "[name].js",
+    filename: '[name].js',
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/dist/",
-    assetModuleFilename: '[name][ext]',
   },
-  devtool: "inline-source-map",
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "app.css", //[name].css
-    }),
-  ],
   module: {
     rules: [
       {
@@ -33,20 +27,30 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.s?css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader", // Translates CSS into CommonJS
-          "sass-loader", // Compiles Sass to CSS
-        ],
+        test: /\.(png|jpe?g|gif)$/,
+        type: 'asset/resource',
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        type: 'asset/resource',
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader',
+            options: {
+              url: false
+            }
+          }, // Translates CSS into CommonJS
+          'sass-loader', // Compiles Sass to CSS
+        ],
       },
     ],
   },
   resolve: {
     extensions: [".ts", ".js"],
   },
+  plugins: [
+    new CleanPlugin.CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+  ]
 };

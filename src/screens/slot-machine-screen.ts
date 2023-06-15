@@ -1,27 +1,15 @@
-import Slot from "../components/slot.component";
-import {resetSpinIconSets} from "../slot.utils";
-import GameData from "../game-data";
+import GameData from "../models/game-data";
 import Screen from "./screen";
+import {GameManager} from "../logic/game-manager";
 
 class SlotMachineScreen extends Screen{
     private static wrapperId: string = "slot-machine-screen";
-    private slot: Slot;
-    private gameData: GameData;
+    private gameManager: GameManager;
 
-    constructor(gameData: GameData) {
+    constructor(gameManager: GameManager) {
         super(SlotMachineScreen.wrapperId);
-        this.gameData = gameData;
-        this.slot = new Slot(gameData);
-
-        this.renderSlot();
-
-        // Initalize stuff
-        resetSpinIconSets();
+        this.gameManager = gameManager;
     }
-
-    renderSlot = () => {
-        this.slot.startButton.addEventListener("click", this.slot.startSpin);
-    };
 }
 
 export default SlotMachineScreen;

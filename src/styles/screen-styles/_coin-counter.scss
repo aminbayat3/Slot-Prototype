@@ -1,0 +1,24 @@
+@use "../util" as u;
+
+#coin-counter-wrapper{
+
+  .balance-wrapper{
+    background-image: url("/public/images/ui/coin-counter.png");
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    top: 32px;
+    right: 32px;
+    width: 234px;
+    height:83px;
+
+    .gold-balance{
+      width: 60%;
+      margin-right: 5%;
+      font-size: 28px;
+      text-align: center;
+      font-family: u.$font;
+    }
+  }
+}
