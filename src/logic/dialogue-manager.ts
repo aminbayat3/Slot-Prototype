@@ -47,7 +47,6 @@ export class DialogueManager{
     }
 
     public advanceStory(){
-        console.log("TESt");
         this.storyFragmentActions[this.currentIndex].do(this.screen, this);
         this.currentIndex++;
         if(this.storyFragmentActions[this.currentIndex].isExecutedAtOnce()){

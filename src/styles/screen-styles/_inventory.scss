@@ -1,5 +1,96 @@
 @use "../util" as u;
 
 #inventory-screen{
+  background-image: url("/public/images/ui/inventory/background.png");
 
+  .item-list-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1450px;
+    height: 80%;
+    position: absolute;
+    bottom: 25px;
+    left: 5px;
+
+    .item-list-element-wrapper{
+      box-sizing: border-box;
+      background-image: url("/public/images/ui/inventory/item-slot-background.png");
+      display: flex;
+      position: relative;
+      width: 228px;
+      height: 208px;
+      margin: 5px;
+
+      &:hover{
+        border: solid 5px saddlebrown;
+        cursor: pointer;
+      }
+
+      .item-list-element-image{
+        max-height:100%;
+        width: 100%;
+      }
+
+      .item-list-element-counter{
+        background-image: url("/public/images/ui/inventory/item-counter-tag.png");
+        width: 113px;
+        height: 48px;
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+  }
+
+  .item-detail-wrapper{
+    background-image: url("/public/images/ui/inventory/item-detail-background.png");
+    padding-bottom: 35px;
+    height: 882px;
+    width: 486px;
+    right: 5px;
+    bottom: 15px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .item-detail-image-wrapper{
+      background-image: url("/public/images/ui/inventory/item-detail-image-background.png");
+      height: 231px;
+      width: 246px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .item-detail-image{
+        width: 110%;
+        max-height: 110%;
+      }
+    }
+
+    .item-detail-title{
+      flex-grow: 1;
+    }
+
+    .item-detail-text{
+      flex-grow: 2;
+    }
+
+    .item-detail-button{
+      background-image: url("/public/images/ui/inventory/button.png");
+      width: 312px;
+      height: 117px;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    .item-detail-value{
+      background-image: url("/public/images/ui/inventory/sell-for.png");
+      width: 207px;
+      height: 100px;
+      margin: 15px 0;
+    }
+  }
 }

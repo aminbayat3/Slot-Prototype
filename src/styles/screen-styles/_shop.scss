@@ -1,5 +1,113 @@
 @use "../util" as u;
 
 #shop-screen{
+  background-image: url("/public/images/ui/shop/background.png");
 
+  .shelf-container{
+    height: 60%;
+    width: 70%;
+    margin: 15% auto auto auto;
+
+    .shelf{
+      height:33%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .shop-item-wrapper{
+        position: relative;
+        height:128px;
+        max-width: 128px;
+        flex-grow: 0;
+
+        &:hover{
+          cursor: pointer;
+        }
+
+        .shop-item-image{
+          max-height: 100%;
+          width: 100%;
+        }
+
+        .shop-item-price-tag{
+          background-image: url("/public/images/ui/shop/price-tag.png");
+          height: 49px;
+          width: 121px;
+          font-family: u.$font;
+          font-size: 36px;
+          line-height: 49px;
+          text-align: center;
+          padding-left: 42px;
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  .shop-pop-up{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("/public/images/ui/shop/pop-up.png");
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+    .shop-pop-up-wrapper{
+      margin: 320px auto auto auto;
+      height: 300px;
+      width: 750px;
+      display: flex;
+      flex-direction: row;
+
+      .shop-pop-up-image-wrapper{
+        width: 390px;
+        display: flex;
+        height:100%;
+        justify-content: center;
+
+        .shop-pop-up-image{
+          margin: 5%;
+          height: 90%;
+        }
+      }
+
+      .shop-pop-up-text-wrapper{
+        display:flex;
+        flex-direction: column;
+        padding-top: 50px;
+        width:300px;
+        height: 100%;
+
+        .shop-pop-up-title{
+          font-family: u.$font;
+          font-size: 28px;
+          line-height: 32px;
+        }
+
+        .shop-pop-up-text{
+          font-family: u.$font;
+          font-size: 20px;
+          line-height: 24px;
+          padding: 5px 25px 0 25px;
+        }
+      }
+    }
+
+    .shop-pop-up-button{
+      display: inline-block;
+      background-image: url("/public/images/ui/shop/button.png");
+      height: 109px;
+      width: 281px;
+      line-height: 109px;
+      font-size: 56px;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+  }
 }

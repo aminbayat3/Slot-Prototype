@@ -1,5 +1,4 @@
 import SlotMachineScreen from "./slot-machine-screen";
-import GameData from "../models/game-data";
 import TitleScreen from "./title-screen";
 import SettingsScreen from "./settings-screen";
 import InGameScreen from "./in-game-screen";
@@ -29,7 +28,7 @@ class ScreenManager{
         this.settingsScreen = new SettingsScreen();
         this.inGameScreen = new InGameScreen();
         this.slotMachineScreen = new SlotMachineScreen(this.gameManager);
-        this.shopScreen = new ShopScreen();
+        this.shopScreen = new ShopScreen(this.gameManager);
         this.inventoryScreen = new InventoryScreen();
         this.sideBarScreen = new SidebarScreen(this); // note: instead of passing this, we could also assign onclick functions via methods
         this.coinCounterScreen = new CoinCounterScreen(this.gameManager);

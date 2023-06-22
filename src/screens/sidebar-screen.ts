@@ -33,10 +33,15 @@ class SidebarScreen extends Screen{
         this.inventoryOption = this.screenWrapper.querySelector("#sidebar-option-inventory")! as HTMLSpanElement;
 
         this.titleOption.addEventListener("click", () => screenManager.switchToTitleScreen());
+        this.titleOption.addEventListener("click", () => this.handleHide());
         this.storyOption.addEventListener("click", () => screenManager.switchToInGameScreen());
+        this.storyOption.addEventListener("click", () => this.handleHide());
         this.slotMachineOption.addEventListener("click", () => screenManager.switchToSlotMachineScreen());
+        this.slotMachineOption.addEventListener("click", () => this.handleHide());
         this.shopOption.addEventListener("click", () => screenManager.switchToShopScreen());
+        this.shopOption.addEventListener("click", () => this.handleHide());
         this.inventoryOption.addEventListener("click", () => screenManager.switchToInventoryScreen());
+        this.inventoryOption.addEventListener("click", () => this.handleHide());
     }
 
     private handleShow(): void{

@@ -18,6 +18,24 @@
     height: 100%;
     width: 560px;
 
+    &:before, &:after{
+      position: absolute;
+      display: block;
+      content: "";
+      background-image: url("/public/images/ui/menu-decoration-vertical.png");
+      width: 28px;
+      height: 100%;
+      top: 0;
+    }
+
+    &:before{
+      left: 0;
+    }
+
+    &:after{
+      right: 0;
+    }
+
     .main-menu-title{
       text-align: center;
       line-height: 56px;

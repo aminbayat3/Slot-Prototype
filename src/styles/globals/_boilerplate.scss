@@ -1,5 +1,10 @@
 @use "../util" as u;
 
+body{
+  padding: 0;
+  margin: 0;
+}
+
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -20,7 +25,6 @@ html {
   overflow: hidden;
   position: relative;
   margin: 0 auto;
-  border: solid 5px black;
   box-sizing: content-box;
 }
 

@@ -1,0 +1,128 @@
+{
+  "0" : {
+    "id": "necklace_1",
+    "name": "Piece of Necklace of Elysia",
+    "description": "A fragment of the necklace of Elysia.",
+    "type": "0",
+    "percentage": "0.01",
+    "value": "0",
+    "src": "public/images/items/"
+  },
+  "1" : {
+    "id": "necklace_2",
+    "name": "Piece of Necklace of Elysia",
+    "description": "A fragment of the necklace of Elysia.",
+    "type": "0",
+    "percentage": "0",
+    "value": "0",
+    "src": "public/images/items/"
+  },
+  "2" : {
+    "id": "buff1",
+    "name": "Coin of Athena",
+    "description": "This coin has been forged in honor of the goddess of wisdom, Athena. Its owner is said to be showered with items.",
+    "type": "1",
+    "percentage": "0.1",
+    "value": "20",
+    "src": {
+      "0": "public/images/items/buff-1.png",
+      "1": "public/images/items/buff-1-active.png"
+    }
+  },
+  "3" : {
+    "id": "buff2",
+    "name": "Crown of Midas",
+    "description": "A pocked sized replica of the crown of legendary King Midas. Its owner is said to find wealth at every corner.",
+    "type": "1",
+    "percentage": "0.1",
+    "value": "25",
+    "src": {
+      "0": "public/images/items/buff-2.png",
+      "1": "public/images/items/buff-2-active.png"
+    }
+  },
+  "4" : {
+    "id": "buff3",
+    "name": "The head of Medusa",
+    "description": "A pocked sized replica of the head of Medusa. With its help, it's possible to petrify even the most unlikely things.",
+    "type": "1",
+    "percentage": "0.1",
+    "value": "50",
+    "src": {
+      "0": "public/images/items/buff-3.png",
+      "1": "public/images/items/buff-3-active.png"
+    }
+  },
+  "5" : {
+    "id": "val1",
+    "name": "Bracelets",
+    "description": "",
+    "type": "2",
+    "percentage": "0.1",
+    "value": "10",
+    "src": "public/images/items/bracelets.png"
+  },
+  "6" : {
+    "id": "val2",
+    "name": "Cloth",
+    "description": "",
+    "type": "2",
+    "percentage": "0.1",
+    "value": "4",
+    "src": "public/images/items/cloth.png"
+  },
+  "7" : {
+    "id": "val3",
+    "name": "Dice",
+    "description": "",
+    "type": "2",
+    "percentage": "0.1",
+    "value": "3",
+    "src": "public/images/items/dice.png"
+  },
+  "8" : {
+    "id": "val4",
+    "name": "Laurel Wreath",
+    "description": "",
+    "type": "2",
+    "percentage": "0.1",
+    "value": "8",
+    "src": "public/images/items/laurel-wreath.png"
+  },
+  "9" : {
+    "id": "val5",
+    "name": "Lyre",
+    "description": "",
+    "type": "2",
+    "percentage": "0.5",
+    "value": "15",
+    "src": "public/images/items/lyre.png"
+  },
+  "10" : {
+    "id": "val6",
+    "name": "Scroll",
+    "description": "",
+    "type": "2",
+    "percentage": "0.1",
+    "value": "3",
+    "src": "public/images/items/scroll.png"
+  },
+  "11" : {
+    "id": "val7",
+    "name": "Spearhead",
+    "description": "",
+    "type": "2",
+    "percentage": "0.5",
+    "value": "2",
+    "src": "public/images/items/spearhead.png"
+  },
+  "12" : {
+    "id": "val8",
+    "name": "Vase",
+    "description": "",
+    "type": "2",
+    "percentage": "0.1",
+    "value": "5",
+    "src": "public/images/items/vase.png"
+  }
+}
