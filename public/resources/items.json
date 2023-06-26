@@ -6,7 +6,7 @@
     "type": "0",
     "percentage": "0.01",
     "value": "0",
-    "src": "public/images/items/"
+    "src": "public/images/items/necklace_left.png"
   },
   "1" : {
     "id": "necklace_2",
@@ -15,7 +15,7 @@
     "type": "0",
     "percentage": "0",
     "value": "0",
-    "src": "public/images/items/"
+    "src": "public/images/items/necklace_right.png"
   },
   "2" : {
     "id": "buff1",

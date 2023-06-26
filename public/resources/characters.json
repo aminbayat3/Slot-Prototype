@@ -18,5 +18,35 @@
     "id": "oracle",
     "name": "The Oracle",
     "default": "public/images/characters/oracle.png"
+  },
+  "4" : {
+    "id": "slotmachine",
+    "name": "Slot Machine",
+    "default": "public/images/characters/slot-machine.png"
+  },
+  "5" : {
+    "id": "shopkeeper",
+    "name": "Shopkeeper",
+    "default": "public/images/characters/shopkeeper.png"
+  },
+  "6" : {
+    "id": "vendor",
+    "name": "Vendor",
+    "default": "public/images/characters/vendor.png"
+  },
+  "7" : {
+    "id": "sofia",
+    "name": "Sofia",
+    "default": "public/images/characters/sofia.png"
+  },
+  "8" : {
+    "id": "masked_stranger",
+    "name": "Masked Stranger",
+    "default": "public/images/characters/masked-stranger.png"
+  },
+  "9" : {
+    "id": "father",
+    "name": "God of Luck",
+    "default": "public/images/characters/father.png"
   }
 }

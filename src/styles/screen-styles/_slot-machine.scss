@@ -1,30 +1,105 @@
 @use "../util" as u;
 
 #slot-machine-screen{
-  background-image: url("/public/images/ui/slot-machine/slot_machine.png");
 
   .column-wrapper{
+    position: absolute;
+    top: 350px;
+    left: 564px;
+    background-image: url("/public/images/ui/slot-machine/slot-background.png");
+    width: 782px;
+    height: 513px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
     .column{
+      position: relative;
+      width: 260px;
+      height:100%;
 
-      .column-item-wrapper{
+      .column-set{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        height:100%;
 
-        .column-item{
+        .column-item-wrapper{
+          background-image: url("/public/images/ui/slot-machine/column-frame.png");
+          background-size: cover;
+          height: 171px;
+          width: 260px;
 
+          .column-item{
+
+          }
         }
       }
     }
   }
 
-  .hands{
+  .buff-menu{
+    position: absolute;
+    top:20%;
+    left: 5%;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 96px;
+    padding:16px;
+    display:flex;
+    width: 192px;
+    max-height: 600px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 10;
 
+    .buff{
+      flex-shrink: 1;
+      flex-grow: 0;
+      width: auto;
+      max-height: 160px;
+      max-width: 160px;
+      margin-bottom: 5px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+
+  .machine,.hands,.row-marker,.spin-button,.coins-left,.coins-right{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .machine{
+    background-image: url("/public/images/ui/slot-machine/slot_machine.png");
+  }
+
+  .hands{
+    background-image: url("/public/images/ui/slot-machine/hands.png");
   }
 
   .row-marker{
-
+    background-image: url("/public/images/ui/slot-machine/arrow.png");
   }
 
   .spin-button{
+    background-image: url("/public/images/ui/slot-machine/button.png");
+  }
 
+  .coins-left{
+    background-image: url("/public/images/ui/slot-machine/coins-left.png");
+  }
+
+  .coins-right{
+    background-image: url("/public/images/ui/slot-machine/coins-right.png");
   }
 }
