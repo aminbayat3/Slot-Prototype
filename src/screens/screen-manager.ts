@@ -29,7 +29,7 @@ class ScreenManager{
         this.inGameScreen = new InGameScreen();
         this.slotMachineScreen = new SlotMachineScreen(this.gameManager);
         this.shopScreen = new ShopScreen(this.gameManager);
-        this.inventoryScreen = new InventoryScreen();
+        this.inventoryScreen = new InventoryScreen(this.gameManager);
         this.sideBarScreen = new SidebarScreen(this); // note: instead of passing this, we could also assign onclick functions via methods
         this.coinCounterScreen = new CoinCounterScreen(this.gameManager);
         document.addEventListener("keydown", (event) => {if(event.keyCode === 32){ this.inGameScreen.getDialogueManager().handleInput()}});

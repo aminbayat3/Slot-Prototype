@@ -3,6 +3,7 @@ import {ObservedNumber} from "../models/observed-number";
 import {DialogueManager} from "./dialogue-manager";
 import {Item} from "../models/items/item";
 import {Buff} from "../models/items/buff";
+import {InventorySlot} from "../models/inventory-slot";
 
 export class GameManager{
     gameData: GameData;
@@ -18,14 +19,55 @@ export class GameManager{
         this.loadItems();
     }
 
-    public addCoins(amount: number){
-        this.gameData.balance+= amount;
+    private setBalance(amount: number){
+        this.gameData.balance = amount;
         this.balance.value = this.gameData.balance;
     }
 
-    public addItemToInventory(item: Item){
-        console.log("Added item: " + item.name);
-        // TODO
+    public addCoins(amount: number){
+        this.setBalance(this.gameData.balance-(-amount));
+    }
+
+    private addItemToInventory(item: Item){
+        for (let slot of this.gameData.inventory){
+            if(slot.item.id === item.id){
+                slot.amount++;
+                return;
+            }
+        }
+        this.gameData.inventory.push(new InventorySlot(item,1));
+    }
+
+    private removeItemFromInventory(item: Item): boolean{
+        for(let i = 0; i < this.gameData.inventory.length; i++){
+            if(this.gameData.inventory[i].item.id === item.id){
+                this.gameData.inventory[i].amount--;
+                if(this.gameData.inventory[i].amount <= 0){
+                    this.gameData.inventory.splice(i,1);
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public buyItem(item: Item): boolean{
+        if(this.balance.value >= item.value){
+            this.setBalance(this.gameData.balance-item.value);
+            this.addItemToInventory(item);
+            return true;
+        }
+        return false;
+    }
+
+    public useItem(item: Item){
+        // TODO: Use Buffs for slot machine
+    }
+
+    public sellItem(item: Item){
+        if(this.removeItemFromInventory(item)){
+            this.addCoins(item.value);
+        }
     }
 
     public startNewGame(){

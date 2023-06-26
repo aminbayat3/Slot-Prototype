@@ -12,6 +12,10 @@
     bottom: 25px;
     left: 5px;
 
+    .selected{
+      border: solid 5px limegreen;
+    }
+
     .item-list-element-wrapper{
       box-sizing: border-box;
       background-image: url("/public/images/ui/inventory/item-slot-background.png");
@@ -24,6 +28,11 @@
       &:hover{
         border: solid 5px saddlebrown;
         cursor: pointer;
+
+        .item-list-element-counter{
+          bottom: 10px;
+          right: 10px;
+        }
       }
 
       .item-list-element-image{
@@ -38,6 +47,11 @@
         position: absolute;
         bottom: 15px;
         right: 15px;
+        line-height: 50px;
+        font-size: 32px;
+        text-align: center;
+        box-sizing: border-box;
+        padding-left: 18px;
       }
     }
   }
@@ -69,14 +83,24 @@
     }
 
     .item-detail-title{
-      flex-grow: 1;
+      text-align: center;
+      flex-grow: 0;
+      font-size: 38px;
+      margin-bottom: 25px;
     }
 
     .item-detail-text{
-      flex-grow: 2;
+      text-align: justify;
+      font-size: 24px;
+      flex-grow: 1;
+    }
+
+    .item-detail-title,.item-detail-text{
+      padding: 0 80px;
     }
 
     .item-detail-button{
+      flex-shrink: 0;
       background-image: url("/public/images/ui/inventory/button.png");
       width: 312px;
       height: 117px;
@@ -87,10 +111,16 @@
     }
 
     .item-detail-value{
+      flex-shrink: 0;
       background-image: url("/public/images/ui/inventory/sell-for.png");
+      background-position: bottom;
       width: 207px;
-      height: 100px;
+      height: 75px;
       margin: 15px 0;
+      text-align: center;
+      font-size: 28px;
+      line-height: 28px;
+      padding: 25px 0 30px 65px
     }
   }
 }

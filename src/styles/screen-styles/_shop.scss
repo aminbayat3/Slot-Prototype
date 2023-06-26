@@ -17,17 +17,25 @@
 
       .shop-item-wrapper{
         position: relative;
-        height:128px;
-        max-width: 128px;
+        height:192px;
+        max-width: 192px;
         flex-grow: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
         &:hover{
           cursor: pointer;
         }
 
-        .shop-item-image{
-          max-height: 100%;
-          width: 100%;
+        .shop-item-image-wrapper{
+          flex-grow: 1;
+
+          .shop-item-image{
+            max-height: 192px;
+            width: 100%;
+          }
         }
 
         .shop-item-price-tag{
@@ -38,7 +46,7 @@
           font-size: 36px;
           line-height: 49px;
           text-align: center;
-          padding-left: 42px;
+          padding-left: 36px;
           position: absolute;
           bottom: 0;
         }
@@ -57,7 +65,7 @@
 
     .shop-pop-up-wrapper{
       margin: 320px auto auto auto;
-      height: 300px;
+      height: 310px;
       width: 750px;
       display: flex;
       flex-direction: row;
@@ -83,13 +91,14 @@
 
         .shop-pop-up-title{
           font-family: u.$font;
-          font-size: 28px;
-          line-height: 32px;
+          font-size: 36px;
+          line-height: 36px;
+          margin-bottom: 15px;
         }
 
         .shop-pop-up-text{
           font-family: u.$font;
-          font-size: 20px;
+          font-size: 22px;
           line-height: 24px;
           padding: 5px 25px 0 25px;
         }
@@ -99,10 +108,11 @@
     .shop-pop-up-button{
       display: inline-block;
       background-image: url("/public/images/ui/shop/button.png");
-      height: 109px;
-      width: 281px;
-      line-height: 109px;
-      font-size: 56px;
+      background-size: cover;
+      height: 86px;
+      width: 224px;
+      line-height: 88px;
+      font-size: 48px;
 
       &:hover{
         cursor: pointer;

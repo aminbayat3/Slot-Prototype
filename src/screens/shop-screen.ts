@@ -43,8 +43,7 @@ class ShopScreen extends Screen{
     }
 
     buyItem(item: Item){
-        if(this.gameManager.balance.value > item.value){
-            this.gameManager.addItemToInventory(item);
+        if(this.gameManager.buyItem(item)){
             this.hidePopUp();
         }
         else{
@@ -63,7 +62,7 @@ class ShopScreen extends Screen{
                     wrapper = document.getElementById("buff-shelf")!.getElementsByClassName("shop-item-wrapper")[loadedBuffs++];
                 }
                 else{
-                    wrapper = document.getElementById((loadedValuables > maxItemsPerRow)?"val-shelf-1":"val-shelf-2")!.getElementsByClassName("shop-item-wrapper")[loadedValuables%4];
+                    wrapper = document.getElementById((loadedValuables >= maxItemsPerRow)?"val-shelf-1":"val-shelf-2")!.getElementsByClassName("shop-item-wrapper")[loadedValuables%4];
                     loadedValuables++;
                 }
                 wrapper.getElementsByClassName("shop-item-image")[0].setAttribute("src",item.src);

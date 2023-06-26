@@ -25,6 +25,8 @@
     transition-timing-function: cubic-bezier(.17,.84,.44,1);
 
     .sidebar-show-button, .sidebar-hide-button{
+      position: absolute;
+      right: -152px;
       margin: 32px;
       width: 88px;
       height: 88px;
