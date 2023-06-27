@@ -70,7 +70,7 @@ class InventoryScreen extends Screen{
             title = item.name;
             text = item.description;
             value = "" + item.value;
-            this.detailButtonElement.addEventListener("click", () => this.sellItem(item));
+            this.detailButtonElement.addEventListener("click", () => (item.value > 0)?this.sellItem(item):"");
         }
         this.detailImgElement.src = src;
         this.detailTitleElement.innerHTML = title;

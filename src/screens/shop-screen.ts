@@ -22,7 +22,7 @@ class ShopScreen extends Screen{
         this.popUpTitle = document.getElementById("shop-pop-up-title")! as HTMLDivElement;
         this.popUpText = document.getElementById("shop-pop-up-text")! as HTMLDivElement;
         this.popUpButton = document.getElementById("shop-pop-up-button")! as HTMLDivElement;
-        this.popUpElement.addEventListener("click", () => this.hidePopUp())
+        this.popUpElement.addEventListener("click", () => this.hidePopUp());
         this.loadStoreItems();
     }
 
@@ -39,7 +39,10 @@ class ShopScreen extends Screen{
         this.popUpImage.src = item.src;
         this.popUpTitle.innerHTML = item.name;
         this.popUpText.innerHTML = item.description;
-        this.popUpButton.addEventListener("click",() => this.buyItem(item));
+        this.popUpButton.addEventListener("click",(event) => {
+            event.stopPropagation();
+            this.buyItem(item);
+        });
     }
 
     buyItem(item: Item){

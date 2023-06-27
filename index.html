@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slotmachine Game</title>
+    <title>Curse of Fortune</title>
     <link rel="stylesheet" href="/dist/styles.css" />
     <script src="/dist/app.js" defer></script>
 </head>
 <body>
     <div id="game-window" class="res1920x1080">
+        <div class="loading-screen not-active">
+            LOADING...
+        </div>
         <div id="title-screen">
             <img class="title-screen-character" src="public/images/characters/alex.png" alt="Image of Alex">
             <div class="main-menu">
@@ -18,7 +21,6 @@
                 <ul class="main-menu-options">
                     <li id="main-menu-option-continue" class="not-active"><span>Continue</span></li>
                     <li id="main-menu-option-new"><span>Start Game</span></li>
-                    <!--<li id="main-menu-option-load"><span>Load Game</span></li>-->
                     <li id="main-menu-option-settings"><span>Settings</span></li>
                     <li id="main-menu-option-credits"><span>Credits</span></li>
                     <li id="main-menu-option-exit"><span>Exit Game</span></li>
@@ -44,56 +46,56 @@
             </div>
         </div>
         <div id="slot-machine-screen" class="not-active">
-            <div class="column-wrapper">
+            <div id="column-wrapper" class="column-wrapper">
                 <div class="column">
                     <div class="column-set">
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
                     </div>
                     <div class="column-set">
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
                     </div>
                     <div class="column-set">
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="column-set">
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
                     </div>
                     <div class="column-set">
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
                     </div>
                     <div class="column-set">
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="column-set">
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
                     </div>
                     <div class="column-set">
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
                     </div>
                     <div class="column-set">
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
-                        <div class="column-item-wrapper"><div class="column-item"></div></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
+                        <div class="column-item-wrapper"><img class="column-item" src="" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -102,37 +104,47 @@
             <div class="row-marker"></div>
             <div class="coins-left"></div>
             <div class="coins-right"></div>
+            <img id="slot-machine-button" class="spin-button" src="public/images/ui/slot-machine/button.png" alt="">
             <div class="buff-menu">
-                <img class="buff" src="public/images/items/buff-1.png" alt="">
-                <img class="buff" src="public/images/items/buff-2.png" alt="">
-                <img class="buff" src="public/images/items/buff-3.png" alt="">
+                <img class="buff" src="" alt="">
+                <img class="buff" src="" alt="">
+                <img class="buff" src="" alt="">
             </div>
-            <div class="spin-button"></div>
+            <div id="slot-machine-button-click-area" class="spin-button-click-area"></div>
+            <div id="reward-pop-up" class="slot-machine-pop-up not-active">
+                <div class="slot-machine-pop-up-wrapper">
+                    <div class="slot-machine-pop-up-image-wrapper">
+                        <img id="reward-image" class="slot-machine-pop-up-image" src="" alt="">
+                    </div>
+                    <div id="reward-title" class="slot-machine-pop-up-title"></div>
+                    <div id="reward-button" class="slot-machine-pop-up-button">OK</div>
+                </div>
+            </div>
         </div>
         <div id="shop-screen" class="not-active">
             <div class="shelf-container">
                 <div id="val-shelf-1" class="shelf">
                     <div class="shop-item-wrapper">
                         <div class="shop-item-image-wrapper">
-                            <img class="shop-item-image">
+                            <img class="shop-item-image" src="" alt="">
                         </div>
                         <div class="shop-item-price-tag"></div>
                     </div>
                     <div class="shop-item-wrapper">
                         <div class="shop-item-image-wrapper">
-                            <img class="shop-item-image">
+                            <img class="shop-item-image" src="" alt="">
                         </div>
                         <div class="shop-item-price-tag"></div>
                     </div>
                     <div class="shop-item-wrapper">
                         <div class="shop-item-image-wrapper">
-                            <img class="shop-item-image">
+                            <img class="shop-item-image" src="" alt="">
                         </div>
                         <div class="shop-item-price-tag"></div>
                     </div>
                     <div class="shop-item-wrapper">
                         <div class="shop-item-image-wrapper">
-                            <img class="shop-item-image">
+                            <img class="shop-item-image" src="" alt="">
                         </div>
                         <div class="shop-item-price-tag"></div>
                     </div>
@@ -140,25 +152,25 @@
                 <div id="val-shelf-2" class="shelf">
                     <div class="shop-item-wrapper">
                         <div class="shop-item-image-wrapper">
-                            <img class="shop-item-image">
+                            <img class="shop-item-image" src="" alt="">
                         </div>
                         <div class="shop-item-price-tag"></div>
                     </div>
                     <div class="shop-item-wrapper">
                         <div class="shop-item-image-wrapper">
-                            <img class="shop-item-image">
+                            <img class="shop-item-image" src="" alt="">
                         </div>
                         <div class="shop-item-price-tag"></div>
                     </div>
                     <div class="shop-item-wrapper">
                         <div class="shop-item-image-wrapper">
-                            <img class="shop-item-image">
+                            <img class="shop-item-image" src="" alt="">
                         </div>
                         <div class="shop-item-price-tag"></div>
                     </div>
                     <div class="shop-item-wrapper">
                         <div class="shop-item-image-wrapper">
-                            <img class="shop-item-image">
+                            <img class="shop-item-image" src="" alt="">
                         </div>
                         <div class="shop-item-price-tag"></div>
                     </div>
@@ -166,19 +178,19 @@
                 <div id="buff-shelf" class="shelf">
                     <div class="shop-item-wrapper">
                         <div class="shop-item-image-wrapper">
-                            <img class="shop-item-image">
+                            <img class="shop-item-image" src="" alt="">
                         </div>
                         <div class="shop-item-price-tag"></div>
                     </div>
                     <div class="shop-item-wrapper">
                         <div class="shop-item-image-wrapper">
-                            <img class="shop-item-image">
+                            <img class="shop-item-image" src="" alt="">
                         </div>
                         <div class="shop-item-price-tag"></div>
                     </div>
                     <div class="shop-item-wrapper">
                         <div class="shop-item-image-wrapper">
-                            <img class="shop-item-image">
+                            <img class="shop-item-image" src="" alt="">
                         </div>
                         <div class="shop-item-price-tag"></div>
                     </div>
@@ -187,7 +199,7 @@
             <div id="shop-pop-up" class="shop-pop-up not-active">
                 <div class="shop-pop-up-wrapper">
                     <div class="shop-pop-up-image-wrapper">
-                        <img id="shop-pop-up-image" class="shop-pop-up-image">
+                        <img id="shop-pop-up-image" class="shop-pop-up-image" src="" alt="">
                     </div>
                     <div class="shop-pop-up-text-wrapper">
                         <div id="shop-pop-up-title" class="shop-pop-up-title"></div>
@@ -200,105 +212,105 @@
         <div id="inventory-screen" class="not-active">
             <div class="item-list-wrapper">
                 <div class="item-list-element-wrapper selected">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
                 <div class="item-list-element-wrapper">
-                    <img class="item-list-element-image">
+                    <img class="item-list-element-image" src="" alt="">
                     <div class="item-list-element-counter"></div>
                 </div>
             </div>
             <div class="item-detail-wrapper">
                 <div class="item-detail-image-wrapper">
-                    <img class="item-detail-image">
+                    <img class="item-detail-image" src="" alt="">
                 </div>
                 <div class="item-detail-title"></div>
                 <div class="item-detail-text"></div>

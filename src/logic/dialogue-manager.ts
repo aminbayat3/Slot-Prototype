@@ -75,7 +75,7 @@ export class DialogueManager{
             .then(result => {
                 this.characters = [];
                 for(let key in result){
-                    let character: Character = new Character(result[key]["id"],result[key]["name"],result[key]["default"]); // TODO: Adapt if necessary, maybe move to Character constructor and just pass a json string
+                    let character: Character = new Character(result[key]["id"],result[key]["name"],result[key]["size"],result[key]["distance"],result[key]["default"]);
                     this.characters.push(character);
                 }
             })

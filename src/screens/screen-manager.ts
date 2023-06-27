@@ -35,7 +35,6 @@ class ScreenManager{
         this.inventoryScreen = new InventoryScreen(this.gameManager);
         this.sideBarScreen = new SidebarScreen(this); // note: instead of passing this, we could also assign onclick functions via methods
         this.coinCounterScreen = new CoinCounterScreen(this.gameManager);
-        document.addEventListener("keydown", (event) => {if(event.keyCode === 32){ this.inGameScreen.getDialogueManager().handleInput()}});
     }
 
     setActiveScreens(title:boolean,intro:boolean,settings:boolean,ingame:boolean,slotmachine:boolean,shop:boolean,inventory:boolean,sidebar:boolean,coincounter:boolean):void{
@@ -57,8 +56,11 @@ class ScreenManager{
     switchToIntroScreen():void{
         this.setActiveScreens(false,true,false,false,false,false,false,false,false);
     }
-    switchToSettingsScreen():void{
+    switchToSettingsScreenFromTitle():void{
         this.setActiveScreens(false,false,true,false,false,false,false,false,false);
+    }
+    switchToSettingsScreen():void{
+        this.setActiveScreens(false,false,true,false,false,false,false,true,false);
     }
     switchToInGameScreen():void{
         this.setActiveScreens(false,false,false,true,false,false,false,true,true);

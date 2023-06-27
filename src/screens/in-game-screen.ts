@@ -23,6 +23,15 @@ class InGameScreen extends Screen{
         this.leftCharacterNameElement = document.getElementById("character-name-left")! as HTMLImageElement;
         this.rightCharacterNameElement = document.getElementById("character-name-right")! as HTMLImageElement;
         this.dialogueTextElement = document.getElementById("dialogue-text")! as HTMLImageElement;
+        this.screenWrapper.addEventListener("keydown", (event) => {if(event.keyCode === 32){ this.dialogueManager.handleInput()}});
+        this.screenWrapper.addEventListener("click", () => this.dialogueManager.handleInput());
+    }
+
+    public showScreen(show: boolean) {
+        super.showScreen(show);
+        if(show){
+            this.screenWrapper.focus();
+        }
     }
 
     public setBackgroundImage(src: string){

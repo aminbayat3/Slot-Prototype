@@ -2,51 +2,71 @@
   "0" : {
     "id": "alex",
     "name": "Alex",
-    "default": "public/images/characters/alex.png"
+    "default": "public/images/characters/alex.png",
+    "size": "80%",
+    "distance": "15%"
   },
   "1" : {
     "id": "amanda",
     "name": "Amanda",
-    "default": "public/images/characters/amanda.png"
+    "default": "public/images/characters/amanda.png",
+    "size": "70%",
+    "distance": "15%"
   },
   "2" : {
     "id": "godfather",
     "name": "Godfather",
-    "default": "public/images/characters/godfather.png"
+    "default": "public/images/characters/godfather.png",
+    "size": "80%",
+    "distance": "15%"
   },
   "3" : {
     "id": "oracle",
     "name": "The Oracle",
-    "default": "public/images/characters/oracle.png"
+    "default": "public/images/characters/oracle.png",
+    "size": "80%",
+    "distance": "15%"
   },
   "4" : {
     "id": "slotmachine",
     "name": "Slot Machine",
-    "default": "public/images/characters/slot-machine.png"
+    "default": "public/images/characters/slot-machine.png",
+    "size": "80%",
+    "distance": "15%"
   },
   "5" : {
     "id": "shopkeeper",
     "name": "Shopkeeper",
-    "default": "public/images/characters/shopkeeper.png"
+    "default": "public/images/characters/shopkeeper.png",
+    "size": "80%",
+    "distance": "15%"
   },
   "6" : {
     "id": "vendor",
     "name": "Vendor",
-    "default": "public/images/characters/vendor.png"
+    "default": "public/images/characters/vendor.png",
+    "size": "80%",
+    "distance": "15%"
   },
   "7" : {
     "id": "sofia",
     "name": "Sofia",
-    "default": "public/images/characters/sofia.png"
+    "default": "public/images/characters/sofia.png",
+    "size": "80%",
+    "distance": "15%"
   },
   "8" : {
     "id": "masked_stranger",
     "name": "Masked Stranger",
-    "default": "public/images/characters/masked-stranger.png"
+    "default": "public/images/characters/masked-stranger.png",
+    "size": "80%",
+    "distance": "15%"
   },
   "9" : {
     "id": "father",
     "name": "God of Luck",
-    "default": "public/images/characters/father.png"
+    "default": "public/images/characters/father.png",
+    "size": "80%",
+    "distance": "15%"
   }
 }

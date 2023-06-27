@@ -44,7 +44,7 @@
   "4" : {
     "id": "buff3",
     "name": "The head of Medusa",
-    "description": "A pocked sized replica of the head of Medusa. With its help, it's possible to petrify even the most unlikely things.",
+    "description": "A pocked sized replica of the head of Medusa. It's intimidating presence can even have effects on inanimate objects.",
     "type": "1",
     "percentage": "0.1",
     "value": "50",

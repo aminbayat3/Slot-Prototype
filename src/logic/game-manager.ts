@@ -28,7 +28,15 @@ export class GameManager{
         this.setBalance(this.gameData.balance-(-amount));
     }
 
-    private addItemToInventory(item: Item){
+    public removeCoins(amount: number): boolean{
+        if(amount <= this.gameData.balance){
+            this.setBalance(this.gameData.balance-amount)
+            return true;
+        }
+        return false;
+    }
+
+    public addItemToInventory(item: Item){
         for (let slot of this.gameData.inventory){
             if(slot.item.id === item.id){
                 slot.amount++;
@@ -61,7 +69,7 @@ export class GameManager{
     }
 
     public useItem(item: Item){
-        // TODO: Use Buffs for slot machine
+        this.removeItemFromInventory(item);
     }
 
     public sellItem(item: Item){
