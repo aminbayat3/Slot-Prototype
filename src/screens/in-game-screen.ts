@@ -2,6 +2,7 @@ import Screen from "./screen";
 import {DialogueManager} from "../logic/dialogue-manager";
 import {GameManager} from "../logic/game-manager";
 import {ChoiceOption} from "../models/story-actions/choice-option";
+import {Character} from "../models/character";
 
 class InGameScreen extends Screen{
     private static wrapperId: string = "in-game-screen";
@@ -46,17 +47,27 @@ class InGameScreen extends Screen{
         }
     }
 
+    public clearData(){
+        this.setCharacter("","",true,"","");
+        this.setCharacter("","",false,"","");
+        this.backgroundElement.src = "";
+    }
+
     public setBackgroundImage(src: string){
         this.backgroundElement.src = InGameScreen.backgroundSrcPrefix + src;
     }
 
-    public setCharacter(src: string, name: string, placeLeft: boolean){
+    public setCharacter(src: string, name: string, placeLeft: boolean, size: string, distance: string){
         if(placeLeft){
             this.leftCharacterElement.src = src;
+            this.leftCharacterElement.style.height = size;
+            this.leftCharacterElement.style.left = distance;
             this.leftCharacterNameElement.innerText = name;
         }
         else{
             this.rightCharacterElement.src = src;
+            this.rightCharacterElement.style.height = size;
+            this.rightCharacterElement.style.right= distance;
             this.rightCharacterNameElement.innerText = name;
         }
     }

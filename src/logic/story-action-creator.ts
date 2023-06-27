@@ -30,7 +30,7 @@ export class StoryActionCreator{
         }
         else if(actionString.startsWith("_ ")){ // LINE
             let parts: string[] = actionString.split(" ");
-            return new StoryActionDialogueLine(immediateExecutionFlag,parts[1], actionString.substring(actionString.indexOf("\""),actionString.lastIndexOf("\"")));
+            return new StoryActionDialogueLine(immediateExecutionFlag,parts[1], actionString.substring(actionString.indexOf("\"")+1,actionString.lastIndexOf("\"")));
         }
         else if(actionString.startsWith("*")){ // CHOICE
             let parts: string[] = actionString.split(" ");

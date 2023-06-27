@@ -1,0 +1,12 @@
+_ alex "Oh, how delightful. A pawn summoned by daddy dearest. Well, save your breath, princess. I won't go anywhere with you unless you give me a damn good reason."
+_ ? "Aggravated by those words, Amanda decides to forego any further diplomatic approaches and knocks Alex out."
+ch right ? default
+bg gods-abode.png #
+_ ? "After a while Alex wakes up and finds himself in the grand main chamber of an ancient temple, his face etched with anger and confusion. Amanda, fiery and determined, confronts him, while the God of Wisdom, a wise and serene figure, observes the exchange."
+_ alex "What... Where am I?"
+_ amanda "You're in the abode of the God of Wisdom, Alex. Took you long enough to wake up."
+ch right amanda default #
+_ alex "The God of Wisdom? You've got to be kidding me."
+_ godfather "Fear not, Alex. You are safe here. Amanda brought you to me, hoping for a resolution to your curse."
+ch right godfather default #
+dc auto ("" story1 0)

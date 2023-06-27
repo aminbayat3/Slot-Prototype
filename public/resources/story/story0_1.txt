@@ -1,0 +1,10 @@
+_ alex "Let’s chill, I’m very overwhelmed by everything that’s going on here. I want to discuss it peacefully."
+_ amanda "Just follow me."
+_ ? "Seeking a peaceful resolution, Alex follows Amanda to her father."
+bg gods-abode.png
+_ ? "As Alex and Amanda enter the god's abode, Alex finds himself in a grad main chamber of an ancient temple. A fatherly figure, resonating a feeling of calmness, stands inmidst the room."
+ch right godfather default
+_ godfather "Welcome, Alex." #
+_ alex "I wasn't sure what to expect from a god's temple, but it's impressive nonetheless."
+_ godfather "I appreciate the compliment, truly. But let's talk about why Amanda brought you to me. There might be something we can do about your... predicament."
+dc auto ("" story1 0)

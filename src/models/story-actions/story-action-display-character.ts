@@ -16,6 +16,6 @@ export class StoryActionDisplayCharacter extends StoryAction{
 
     public do(inGameScreen: InGameScreen, dialogueManager: DialogueManager){
         (this.isLeft) ? dialogueManager.leftCharacter = this.character : dialogueManager.rightCharacter = this.character;
-        inGameScreen.setCharacter(this.character.getSrcByName(this.srcName),this.character.name,this.isLeft);
+        inGameScreen.setCharacter(this.character.getSrcByName(this.srcName),this.character.name,this.isLeft,this.character.size,this.character.distance);
     }
 }

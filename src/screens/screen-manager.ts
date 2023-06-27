@@ -77,6 +77,7 @@ class ScreenManager{
 
     public startNewGame(){
         this.gameManager.startNewGame();
+        this.inGameScreen.clearData();
         this.inGameScreen.getDialogueManager().startNewGame();
         // this.switchToIntroScreen();
         this.switchToInGameScreen(); // TODO: FOR TESTING ONLY, remove on build

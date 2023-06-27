@@ -3,6 +3,10 @@
 #in-game-screen{
   position: relative;
 
+  &:focus{
+    outline: none;
+  }
+
   .choice-wrapper{
     position: absolute;
     left: 50%;
@@ -71,25 +75,24 @@
   }
 
   .background{
+    background-image: url("/public/images/backgrounds/title-screen-background.png");
+    filter: blur(6px);
     z-index: 1;
   }
 
   .character-left, .character-right{
     z-index: 2;
     position: absolute;
-    height: 80%;
     bottom: 0;
+    transform: translateX(-50%);
   }
 
   .character-left{
-    left: 15%;
     transform: translateX(-50%);
   }
 
   .character-right{
-    right: 15%;
     transform: translateX(50%);
-    /*transform: scaleX(-1);*/
   }
 
   .not-speaker{
@@ -126,15 +129,36 @@
     }
 
     .dialogue-name-left, .dialogue-name-right{
-      background-image: url("/public/images/ui/in-game/name-flair.png");
+      background-image: url("/public/images/ui/in-game/flair-middle.png");
+      background-repeat: repeat-x;
       position: absolute;
-      top: -50px;
+      top: -25px;
       font-size: 48px;
+      line-height: 74px;
       text-align: center;
       font-family: u.$font;
-      padding: 24px;
       height:90px;
-      min-width: 256px;
+
+      &:before,&:after{
+        position: absolute;
+        background-repeat: no-repeat;
+        content: "";
+        height: 100%;
+      }
+
+      &:before{
+        background-image: url("/public/images/ui/in-game/flair-left.png");
+        width: 110px;
+        left: -110px;
+        top: 0;
+      }
+
+      &:after {
+        background-image: url("/public/images/ui/in-game/falir-right.png");
+        width: 128px;
+        right: -128px;
+        bottom: 18px;
+      }
     }
 
     .dialogue-name-left{

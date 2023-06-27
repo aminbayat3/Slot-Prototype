@@ -20,6 +20,6 @@ export class Character{
     }
 
     public static getGenericCharacter():Character{
-        return new Character("-1","Stranger","","","");
+        return new Character("-1","","","","");
     }
 }

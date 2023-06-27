@@ -10,7 +10,7 @@
     "id": "amanda",
     "name": "Amanda",
     "default": "public/images/characters/amanda.png",
-    "size": "70%",
+    "size": "65%",
     "distance": "15%"
   },
   "2" : {
@@ -24,11 +24,11 @@
     "id": "oracle",
     "name": "The Oracle",
     "default": "public/images/characters/oracle.png",
-    "size": "80%",
-    "distance": "15%"
+    "size": "100%",
+    "distance": "0"
   },
   "4" : {
-    "id": "slotmachine",
+    "id": "slot-machine",
     "name": "Slot Machine",
     "default": "public/images/characters/slot-machine.png",
     "size": "80%",
@@ -59,8 +59,8 @@
     "id": "masked_stranger",
     "name": "Masked Stranger",
     "default": "public/images/characters/masked-stranger.png",
-    "size": "80%",
-    "distance": "15%"
+    "size": "100%",
+    "distance": "0"
   },
   "9" : {
     "id": "father",

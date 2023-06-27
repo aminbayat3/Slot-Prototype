@@ -1,0 +1,9 @@
+bg title-screen-background.png
+ch left alex default #
+ch right amanda default #
+_ alex "Hello Amanda. How are you doing?"
+_ amanda "I'm good thanks."
+_ godfather "And as always, no-one wants to know how I feel"
+ch right godfather default
+_ godfather "But no worries, I'm used to it... I mean, I'm just a god so.. no biggie."
+* manual ("I care... not" story0_1 0 val2) ("I don't care" story0_2 15)
