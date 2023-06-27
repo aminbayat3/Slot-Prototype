@@ -6,3 +6,4 @@ _ amanda "I'm good thanks."
 _ godfather "And as always, no-one wants to know how I feel"
 ch right godfather default
 _ godfather "But no worries, I'm used to it... I mean, I'm just a god so.. no biggie."
+* manual ("I care... not" story1 0 val2) ("I don't care" story2 15)

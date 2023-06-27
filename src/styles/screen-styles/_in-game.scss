@@ -3,6 +3,73 @@
 #in-game-screen{
   position: relative;
 
+  .choice-wrapper{
+    position: absolute;
+    left: 50%;
+    top:10%;
+    height:600px;
+    max-width: 600px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+
+    .choice-option{
+      position: relative;
+      background-image: url("/public/images/ui/in-game/dialogue-background.png");
+      font-size: 28px;
+      line-height: 92px;
+      min-width: 480px;
+      height: 92px;
+      padding: 0 32px;
+      margin: 64px 0;
+      text-align: center;
+
+      &:hover{
+        cursor: pointer;
+      }
+
+      &:before, &:after{
+        position: absolute;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 12px;
+        background-image: url("/public/images/ui/menu-decoration-horizontal.png");
+        background-repeat: repeat-x;
+        background-size: cover;
+        left: 0;
+      }
+
+      &:before{
+        top: 0;
+      }
+
+      &:after{
+        bottom: 0;
+      }
+
+      .option-requirement{
+        height: 100%;
+        display: inline-block;
+        margin-left: 28px;
+
+        .option-requirement-image{
+          display: inline-block;
+          vertical-align: middle;
+          height:65%;
+          width: auto;
+          margin-right: 8px;
+        }
+        .option-requirement-text{
+          display: inline-block;
+          font-size: 22px;
+          height: 100%;
+          line-height: 100%;
+        }
+      }
+    }
+  }
+
   .background{
     z-index: 1;
   }

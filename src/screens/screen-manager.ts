@@ -29,7 +29,7 @@ class ScreenManager{
         this.titleScreen = new TitleScreen(this, this.gameManager);
         this.introductionScreen = new IntroductionScreen(this);
         this.settingsScreen = new SettingsScreen();
-        this.inGameScreen = new InGameScreen();
+        this.inGameScreen = new InGameScreen(this.gameManager);
         this.slotMachineScreen = new SlotMachineScreen(this.gameManager);
         this.shopScreen = new ShopScreen(this.gameManager);
         this.inventoryScreen = new InventoryScreen(this.gameManager);

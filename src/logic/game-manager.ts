@@ -1,6 +1,5 @@
 import GameData from "../models/game-data";
 import {ObservedNumber} from "../models/observed-number";
-import {DialogueManager} from "./dialogue-manager";
 import {Item} from "../models/items/item";
 import {Buff} from "../models/items/buff";
 import {InventorySlot} from "../models/inventory-slot";
@@ -36,6 +35,15 @@ export class GameManager{
         return false;
     }
 
+    public isItemInInventory(id: string){
+        for(let i = 0; i < this.gameData.inventory.length; i++) {
+            if(this.gameData.inventory[i].item.id === id){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public addItemToInventory(item: Item){
         for (let slot of this.gameData.inventory){
             if(slot.item.id === item.id){
@@ -46,9 +54,9 @@ export class GameManager{
         this.gameData.inventory.push(new InventorySlot(item,1));
     }
 
-    private removeItemFromInventory(item: Item): boolean{
+    public removeItemFromInventoryById(id: string, amount: number): boolean{
         for(let i = 0; i < this.gameData.inventory.length; i++){
-            if(this.gameData.inventory[i].item.id === item.id){
+            if(this.gameData.inventory[i].item.id === id){
                 this.gameData.inventory[i].amount--;
                 if(this.gameData.inventory[i].amount <= 0){
                     this.gameData.inventory.splice(i,1);
@@ -57,6 +65,10 @@ export class GameManager{
             }
         }
         return false;
+    }
+
+    public removeItemFromInventory(item: Item): boolean{
+        return this.removeItemFromInventoryById(item.id,1);
     }
 
     public buyItem(item: Item): boolean{

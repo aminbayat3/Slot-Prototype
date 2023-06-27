@@ -16,7 +16,7 @@
         <div id="title-screen">
             <img class="title-screen-character" src="public/images/characters/alex.png" alt="Image of Alex">
             <div class="main-menu">
-                <img class="main-menu-logo" src="public/images/ui/logo.png">
+                <img class="main-menu-logo" src="public/images/ui/logo.png" alt="">
                 <div class="main-menu-title">MAIN MENU</div>
                 <ul class="main-menu-options">
                     <li id="main-menu-option-continue" class="not-active"><span>Continue</span></li>
@@ -35,10 +35,16 @@
         <div id="menu-screen" class="not-active">
 
         </div>
-        <div id="in-game-screen" class="not-active">
+        <div tabindex="0" id="in-game-screen" class="not-active">
             <img id="dialogue-background" src="" class="background" alt="environment image">
             <img id="character-left" src="" class="character-left" alt="left character">
             <img id="character-right" src="" class="character-right" alt="left character">
+            <div id="options" class="choice-wrapper">
+                <div id="option-requirement" class="option-requirement not-active"><img class="option-requirement-image" src="" alt=""><div class="option-requirement-text"></div></div>
+                <div class="choice-option"></div>
+                <div class="choice-option"></div>
+                <div class="choice-option"></div>
+            </div>
             <div class="dialogue-wrapper">
                 <div id="character-name-left" class="dialogue-name-left"></div>
                 <div id="character-name-right" class="dialogue-name-right"></div>
@@ -110,7 +116,7 @@
                 <img class="buff" src="" alt="">
                 <img class="buff" src="" alt="">
             </div>
-            <div id="slot-machine-button-click-area" class="spin-button-click-area"></div>
+            <div tabindex="0" id="slot-machine-button-click-area" class="spin-button-click-area"></div>
             <div id="reward-pop-up" class="slot-machine-pop-up not-active">
                 <div class="slot-machine-pop-up-wrapper">
                     <div class="slot-machine-pop-up-image-wrapper">

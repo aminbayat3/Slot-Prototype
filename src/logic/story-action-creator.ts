@@ -4,6 +4,9 @@ import {StoryActionDisplayBackground} from "../models/story-actions/story-action
 import {StoryActionDisplayCharacter} from "../models/story-actions/story-action-display-character";
 import {StoryActionDialogueLine} from "../models/story-actions/story-action-dialogue-line";
 import {DialogueManager} from "./dialogue-manager";
+import {StoryActionChoiceAuto} from "../models/story-actions/story-action-choice-auto";
+import {ChoiceOption} from "../models/story-actions/choice-option";
+import {StoryActionChoiceManual} from "../models/story-actions/story-action-choice-manual";
 
 export class StoryActionCreator{
 
@@ -30,7 +33,28 @@ export class StoryActionCreator{
             return new StoryActionDialogueLine(immediateExecutionFlag,parts[1], actionString.substring(actionString.indexOf("\""),actionString.lastIndexOf("\"")));
         }
         else if(actionString.startsWith("*")){ // CHOICE
-            // TODO
+            let parts: string[] = actionString.split(" ");
+            let optionStrings: string[] = actionString.split("(");
+            optionStrings.splice(0,1);
+            let options: ChoiceOption[] = [];
+            for (let i = 0; i < optionStrings.length; i++) {
+                optionStrings[i] = optionStrings[i].substring(0,optionStrings[i].indexOf(")"));
+                let line = optionStrings[i].substring(optionStrings[i].indexOf("\"")+1,optionStrings[i].lastIndexOf("\""));
+                let optionParts = optionStrings[i].substring(optionStrings[i].lastIndexOf("\"")+1).trim().split(" ");
+                let path = optionParts[0];
+                let amount: number = Number(optionParts[1]);
+                let itemsIds: string[] = [];
+                for (let j = 2; j < optionParts.length; j++) {
+                    itemsIds.push(optionParts[j]);
+                }
+                options.push(new ChoiceOption(line,path,amount,itemsIds));
+            }
+            if(parts[1] === "auto"){
+                return new StoryActionChoiceAuto(immediateExecutionFlag,options);
+            }
+            else{
+                return new StoryActionChoiceManual(immediateExecutionFlag,options);
+            }
         }
         return new StoryAction(immediateExecutionFlag);
     }
